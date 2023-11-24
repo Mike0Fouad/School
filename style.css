@@ -24,7 +24,12 @@ body {
     overflow-x: hidden;
 }
 
-
+section{
+    visibility:hidden;
+}
+#register{
+    visibility:visible;
+}
 
 /* headinggggggggggggggggggggggggggggggggggggggggggg */
 a>img {
