@@ -15,7 +15,7 @@ function validgender(gender){
         return true;
     }else{
         return false;
-        re
+        
         
     }
 }
@@ -68,5 +68,4 @@ function validname(){
     validename(lastname);
     
 }
-function validform(){
     
