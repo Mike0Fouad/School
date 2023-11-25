@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Wix+Madefor+Display:wght@400;500;600;700;800&display=swap');
-section{
-    width:100vw;
-    height:100vh;
-}
+
 *{
     margin:0;
     padding:0;
@@ -22,12 +19,78 @@ body {
                          "content"
                          "ending";
     margin: 0;
-    height: 100vh;
-    overflow-x: hidden;
+    min-height: 100vh;
+    overflow-y: unset; /*u can set later to scroll, but first clean mispositioning in div*/
+    scroll-behavior: smooth; /*let u scroll smoother, also we need to adjust the scrolling so the section is adjusted to header or let header stop before section, so the start of it is visible*/
 }
+section{
+    position: relative;
+    height:100%;
+    width:100%;
+    min-width:100vw;
+    min-height:100vh;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    margin:0;
+    padding: 5%;
+}
+#home{
+    background: blue;
+    z-index: -1;
+    /*z-index controls the position of the "layer" (element) -1 is lower than 1, just worksunder special positining and display conditions*/
+}
+#home h2{
+    top: 70px;
+  position: fixed;
+  font-size: 12px;
+  left: 0px;
+  backdrop-filter: blur(7px);
+  background: #515fda99;
+  border-radius: 15px 0;
+  padding: 5px 14px;
+  font-weight: 500;
+  letter-spacing: .9px;
+  filter: drop-shadow(1px 1px 2px #00260055);
+  z-index: 0.5;
+  /*its better to place the headlines under the section and also consider h1 for seo optimization (i also need to look new rules up, meh)*/
+}
+.homewrapper{
+    position: relative;
+    margin-right: 25%;
+    display: contents;
+    /*try never to let a div unnamed, also classNames are used more than ids, but depends on ur workstyle, so i gave it a name*/
+}
+#Logo{
+    position: relative;
+    z-index: -2;
+}
+#Logo img{
+    display:flex;
+    margin:20px auto 0 auto;
+    filter: drop-shadow(0px 0px 27px #23d8b7bb)
+    drop-shadow(1px 1px .1px #ffffffaa) 
+    drop-shadow(1px -1px .1px #ffffffaa);
+}
+#info{
+    background: violet;
+    position: relative;
+  display: table; /*or try inline-flex for more vertical design*/
+}
+#payment{
+    background: yellow;
+    margin: 0%;
+    position: relative;
+    display: table; /*or try inline-flex for more vertical design*/
 
-
-
+}
+#contact{
+    background: green;
+    position: relative;
+    padding:25% 50% 50% 25%;
+    display: table; /*or try inline-flex for more vertical design*/
+}
 /* headinggggggggggggggggggggggggggggggggggggggggggg */
 a>img {
     position: relative;
@@ -113,7 +176,9 @@ h1>img {
     position: relative;
 }
 /* contentttttttttttttttttttttttttttttttttttttttttt */
-#content {
+#register {
+    min-height:140vh;
+    position: relative;
     grid-area: "content";
     display: inline-grid;
     grid-template-columns: 50% 50%;
@@ -426,4 +491,3 @@ hr {
     margin-top:5px;
     padding: 0 0px;
 }
-
