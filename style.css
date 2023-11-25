@@ -9,80 +9,130 @@ section{
     font-family: 'Jura', sans-serif; /*ur main font and style*/
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth; /*weblit helps for crossbrowser compatibility*/
 }
 body {
-    width:100%;
+    width:100vw;
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas: "heading"
                          "content"
                          "ending";
-    /* min-height: 100vh; */
     margin: 0;
     height: 100vh;
     overflow-x: hidden;
 }
 
-section{
-    visibility:hidden;
-}
-#register{
-    visibility:visible;
-}
+
 
 /* headinggggggggggggggggggggggggggggggggggggggggggg */
 a>img {
     position: relative;
-    top:5px;
-
+    justify-content:center;
+	align-items:center;
+    height:86px;
+	width:106px;
+    filter:invert(2);
+    opacity: .8;
+    transform:scale(.9);
+}
+a>img:hover{
+    filter: drop-shadow(2px 2px 4px #002657); 
+    filter:invert(2);
+}
+#links{
+    position: fixed;
+    display:inline-flex;
+    z-index:1003;
+    height: 100%;
+    right:-15px;
+    top:-5.75px;
+    transform:scale(.8);
+    list-style: none;
+}
+#links span{
+position: relative;
+text-align: center;
+}
+#links li{
+    margin: .5%;
 }
 .page {
     text-decoration: none;
     color: #fff;
-    position: relative;
-    top: 50px;
-    margin: 40px;
-    padding:10px;
-    background-color: #333;
-    border-radius: 5%;
+    position:initial ;
+    padding:11px 11px;
+    /*background-color: #333333aa;*/
+    background: radial-gradient(#23b499aa 20%,#2362b466);
+    filter: backdrop-filter(13px);
+    border-radius: 25%;
     transition: color 0.3s,
     background-color 0.3s;
+	display:inline-grid;
+	z-index:1001;
+    filter: drop-shadow(-1px 0px 5px #c2c2c2cc); 
+    transform-origin: top;
+    transition: all ease-in-out .3s;
+    transform:scale(.85);
+    filter: drop-shadow(0px 3px 3px #23b499aa) drop-shadow(1px 1px 2px #001226);
+    ;
 }
 .page:hover{
-    background-color: #5e5656;
-}
-#heading {
-    
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    height: 250px;
-    grid-area: "heading";
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr  1fr ;
-    margin: 0px;
-  }
-h1>img {
-    width: 235px;
+    background: radial-gradient(#23d8b799 40%,#2362b4aa);
+    scale: 1.05;
+    filter: drop-shadow(-1px 0px 5px #aefff055);
+    border: .5px solid #cccccc99;
+    transition: all ease-in-out .3s;
+    margin-left:-1px;
+    margin-top:-4px;
 
 }
+#heading {
+    background: linear-gradient(45deg,#23b499aa 10%,#2362b4cc);
+    backdrop-filter: blur(7px);
+    color: #fff;
+    height: 100px;
+    width:100vw;
+    margin: 0px;
+    position: fixed;
+    top:0;
+    z-index: 1003;
+    filter: drop-shadow(1px 1px 4px #292929aa);
+    /*needs adjustment*/
+  }
+h1>img {
+    width: 200px;
+    margin-top:-14.5px;
+    filter: drop-shadow(0px 0px 7px #23d8b7bb)
+    drop-shadow(1px 1px .1px #ffffffaa) 
+    drop-shadow(1px -1px .1px #ffffffaa);
+    right: 10px;
+    position: relative;
+}
 /* contentttttttttttttttttttttttttttttttttttttttttt */
-#register {
+#content {
     grid-area: "content";
-    height:800px;
-    display: grid;
+    display: inline-grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 1fr;
+    /*background: red;*/
 }
 #register>img {
     width: 100%;
-    height: 100%;
-    /* object-fit: cover; */
+    height: 100vh;
+    min-height: 100%;
+    object-fit: cover;
+    position: fixed;
+    top:0;
+    right:0px;
+    z-index: -2;
 }
 form {
-    background-color: rgb(113, 161, 161);
+    background-color: #71a1a1aa; /*the aa at the end is the opacity/transparence, delete it for original color 00 (0 opacity) - ff (full opacity)*/
+    backdrop-filter: blur(13px); /*makes the background blurry, delete it if u dont want and u can also try invert(100%) eg for cool x-ray effect*/
     z-index: 0;
 }
 label[for="birthday"]{
@@ -101,12 +151,14 @@ input[type="date"] {
     outline: white;
 }
 /* trianglesssssssssss */
+/* old
 #triangles {
-    position: relative;
+    position: absolute;
     top:-10;
     height:0;
 }
 #triangle1{
+    position: absolute;
     width: 100%;
 	height: 0;
 	border-top: 5px solid transparent;
@@ -118,6 +170,7 @@ input[type="date"] {
 }
 
 #triangle2{
+    position: absolute;
     width: 0;
     height: 0;
     border-top: 500px solid transparent;
@@ -126,7 +179,7 @@ input[type="date"] {
     position: relative;
     z-index: 1;
     top:-200px;
-}
+} */
 /* formmmmmmmmmmm */
 legend{
     font-size: 1.3em;
@@ -136,11 +189,10 @@ form{
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     gap:0;
-    margin-left: 50%;
     max-width: 100%;
-    margin-right:50%;
     position:absolute;
-    right:-50%;
+    /* right:-50%; i reposition ur form a little here back to who it was before, adjust it to ur liking, wont touch ur triangles tho before i break it more :3 mosty i replace the top or right attributes with margin-top, margin-right etc, most of the time u can keep the heights u used or simply reverse them by deleting or adding a - ;) */
+    right:0;
 }
 #title {
 	height:0;
@@ -150,29 +202,28 @@ form{
     border-bottom:100px solid grey;
     position:relative;
     z-index:3;
-    top:-25px;
+    margin-top:-25px;
     left:0px;
-
 }
-h2{
+ h2{
     text-align: center;
     position: relative;
-    top:30px;
-    margin: 0px;
+    margin-top:30px;
     color: aliceblue;
 }
 
 
 #formIn {
     position: relative;
-    top:-70px;
+    margin-top:70px;
+    margin-bottom:40px;
     z-index: 4;
 }
 fieldset{
     border-radius: 9px;
     position: relative;
-    top:20px;
-    left: 50px;
+    margin-top:20px;
+    margin-left: 50px;
     width: 80%;
     padding: 10px;
     margin-bottom: 20px;
@@ -191,9 +242,7 @@ fieldset{
     grid-template-rows: 1fr 1 fr;
     row-gap: 10px;
     column-gap: 10px;
-    margin-top: 30px;
-    
-
+    margin-top: -30px;
 }
 
 input[type="text"] {
@@ -204,7 +253,7 @@ input[type="text"] {
     height: 30px;
     outline: none;
     font-size: larger;
-    left: 40px;
+    margin-left: 40px;
 }
 #Acedmic {
     display: grid;
@@ -218,13 +267,13 @@ input[type='text']:hover{
 input[type='text']:hover::placeholder {
     color: #2b2e2e; ; 
 }
-#contact {
+#contact2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 }
 
-#contact > input {
+#contact2 > input {
     border:0;
     border-bottom: 1px solid #fff;
     background-color: transparent;
@@ -232,13 +281,13 @@ input[type='text']:hover::placeholder {
     height: 30px;
     outline: none;
     font-size: larger;
-    left: 40px;    
+    margin-left: 40px;    
 }
-#contact > input:hover{
+#contact2 > input:hover{
     border-bottom: 1px solid #23b499;
     color: #2b2e2e;
 }
-#contact > input:hover::placeholder {
+#contact2 > input:hover::placeholder {
     color: #2b2e2e; ; 
 }
 .comment {
@@ -248,29 +297,29 @@ input[type='text']:hover::placeholder {
 }
 .comment > label[for="comm"] {
     text-align: center;
-    width:20%;
+    width:150px; /*was 20%, care if using % can break on too small or too big devices, doesnt scale always good, u can read about rem or em if u want more adjustable sizes, but can also be exhaustng to handle*/
     position: relative;
     font-size: 20px;
     padding:10px;
     background-color: #5c6664;
     border-radius: 20px;
     
-    top:42px;
-    left: 40px;
+    margin-top:0px; /*was 42*/
+    margin-left: 40px;
     color:white;
 }
 textarea {
     z-index: 4;
     position: relative;
-    top:30px;
-    left: 30px;
+    margin-top:-9px; /*was 30*/
+    margin-left: 70px;
     border:0;
-    background-color: #5c6664;
+    background-color: #5c6664; /*would recommend to adjust the grey areas to dark blue*/
     width:80%;
     height:100%;
     outline: none;
     font-size: larger;
-    left: 40px;
+    /* left: 40px; added this to above left */
     border-radius: 40px;
     padding: 30px;
     transition: color 0.3s,
@@ -281,8 +330,8 @@ textarea:hover::placeholder{
 }
 #button >*{
     position: relative;
-    top:40px;
-    left: 10%;
+    margin-top:10px; /*was 40*/
+    margin-left: 100px; /*was 10%*/
     width: 150px;
     height: 35px;
     color: white;
@@ -340,27 +389,41 @@ select {
     color: #23b499;
  }
 
-
+#body2{
+    position: relative;
+    display: contents; /*also try out ruby-text, flex or inline-flex for more design ideas, try to find source (maybe registration) of mispositioning first before starting to style*/
+}
 
 /* endinggggggggggggggggggggggggggggggggggggggggg */
 #ending {
     grid-area: "ending";
-    background-color: rgb(10, 10, 48);
+    background: linear-gradient(75deg,#23b499aa,#2362b4cc 10%,#23b499aa);
     color: #fff;
-    padding: 1em;
     text-align: center;
-    height: 250px;
-    z-index: 4;
+    height: 5%;
+    z-index: 1000;
+	bottom:0;
+	position:fixed;
+	width:100%;
+	margin-bottom:0;
+    backdrop-filter: blur(7px);
+    font-size: .8rem;
 }
-#ending>div {
+.ending {
     position: relative;
-    top: 50px;
-    margin: 0px;
+    margin: 0%;
     padding: 0px;
+    text-align: center;
+    justify-content: center;
+    vertical-align: middle;
+    align-items: center;
+    align-self: center;
 }
 hr {
     width: 50%;
-    margin: 0 auto;
-    border: 1px solid #fff;
-    margin-bottom: 20px;
+    margin: 5px auto;
+    border: .2px solid #fff;
+    margin-top:5px;
+    padding: 0 0px;
 }
+
