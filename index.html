@@ -2,461 +2,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="./style.css">
+    <style>
+        home{
+            width: 100vh;
+        }
+        #body4{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 50vh 50vh;
+            height: 100%;
+            width:100%;
+            margin-top:140px;
+            padding-bottom: 130px;
+            gap: 10px;
+        }
+        #body4 p{
+            font-size: 20px;
+            font-weight: 500;
+            margin: 0 0 0 20px;
+            padding: 0;
+            
+        }
+        #vision,#mission {
+            background-color: rgb(123, 123, 250);
+            width:75vh;
+            padding:10px;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+        }
+        #Logo img{
+            width:100%;
+        }
+
+        .container{
+            position:relative;
+        }
+        .container .wrapper{
+            width: 100vh;
+            height: vh;
+            box-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+            margin: 5rem auto;
+            overflow: hidden;
+            border-radius: 5%;
+        }
+        .container .wrapper-holder{
+            display:grid;
+            grid-template-columns: repeat(5,100%);
+            height: 100%;
+            width:100%;
+        }
+        .wrapper-holder{
+            animation: slide 40s infinite;
+        }
+        .wrapper-holder>*{
+            height: 100%;
+            width: 100%;
+            background-position: center;
+        }
+        .slidee{
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+        }
+        
+        @keyframes slide {
+            0%, 12.5% { transform: translateX(0); }
+            20%, 32.5% { transform: translateX(-100%); }
+            40%, 52.5% { transform: translateX(-200%); }
+            60%, 72.5% { transform: translateX(-300%); }
+            80%,0% { transform: translateX(-400%); }
+        }
+    </style>
     <title>Home Page</title>
 </head>
 <body>
     <div id="heading">
         <h1><img src="./assets/icons/image-removebg-preview.png"></h1>
         <ul id="links">
-            <li><a href="#home" class="page"><img src="./assets/icons/home_FILL0_wght400_GRAD0_opsz24.svg" fill="white"><br><span>home</span></a> </li>
-            <li><a href="#info" class="page"><img src="./assets/icons/info_FILL0_wght400_GRAD0_opsz24.svg" fill="white"><br><span>Info</span></a></li>
-            <li><a href="#payment" class="page"><img src="./assets/icons/account_balance_FILL0_wght400_GRAD0_opsz24.svg" fill="white"><br><span>Payment</span></a></li>
-            <li><a href="#register" class="page"><img src="./assets/icons/app_registration_FILL0_wght400_GRAD0_opsz24.svg" fill="white"><br><span>Register</span></a></li>
-            <li><a href="#contact" class="page"><img src="./assets/icons/contact_support_FILL0_wght400_GRAD0_opsz24.svg" fill="white"><br><span>Contact</span></a>
+            <li><a href="./index.html" class="page"><img src="./assets/icons/home_FILL0_wght400_GRAD0_opsz24.svg" fill="white"><br><span>home</span></a> </li>
+            <li><a href="./info.html" class="page"><img src="./assets/icons/info_FILL0_wght400_GRAD0_opsz24.svg" fill="white"><br><span>Info</span></a></li>
+            <li><a href="./payment.html" class="page"><img src="./assets/icons/account_balance_FILL0_wght400_GRAD0_opsz24.svg" fill="white"><br><span>Payment</span></a></li>
+            <li><a href="./register.html" class="page"><img src="./assets/icons/app_registration_FILL0_wght400_GRAD0_opsz24.svg" fill="white"><br><span>Register</span></a></li>
+            <li><a href="./contact.html" class="page"><img src="./assets/icons/contact_support_FILL0_wght400_GRAD0_opsz24.svg" fill="white"><br><span>Contact</span></a>
         </li></ul>
     </div>
     <section id="home">
-        <h2>DSGND BY PROJEXT42</h2>
-        <div id="graphs">
-        </div>
-        <div>
-            <div id="Logo">
-                <img src="./assets/icons/image-removebg-preview.png">
-            </div>
+        <div id="body4">
             <div id="vision">
+                <h2>Vision</h2>
                 <p>
                     ProjeXt42 is a school that aims to teach students the basics of programming and how to use it in real life.
+                    We also aim to teach students how to work in teams and how to manage their time.ProjeXt42 is a school that aims to teach students the basics of programming and how to use it in real life.
                     We also aim to teach students how to work in teams and how to manage their time.
                 </p>
             </div>
             <div id="mission">
+                <h2>Mission</h2>
                 <p>
                     ProjeXt42 is a school that aims to teach students the basics of programming and how to use it in real life.
+                    We also aim to teach students how to work in teams and how to manage their time.ProjeXt42 is a school that aims to teach students the basics of programming and how to use it in real life.
                     We also aim to teach students how to work in teams and how to manage their time.
                 </p>
             </div>
+            <div id="Logo">
+                <img src="./assets/icons/image-removebg-preview.png">
+            </div>
             <div id="photos">
-
-            </div>
-        </div>
-    </section>
-    <section id="info">
-        <div id="cur">
-            <h2></h2>curriculum
-            <h3>Grade 1</h3>
-            <table>
-                <tbody><tr>
-                    <th>Subject</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>Math</td>
-                    <td>math math math math math math math math </td>
-                </tr>
-                <tr>
-                    <td>English</td>
-                    <td>Engl enlg engl engl engl engl engl engl</td>
-                </tr>
-                <tr>
-                    <td>Arabic</td>
-                    <td>Arab arab arab arab arab arab arab arab</td>
-                </tr>
-                <tr>
-                    <td>Science</td>
-                    <td>Sci sci sci sci sci sci sci sci sci sci</td>
-                </tr>
-                <tr>
-                    <td>History</td>
-                    <td>Hist hist hist hist hist hist hist hist</td>
-                </tr>
-                <tr>
-                    <td>Geography</td>
-                    <td>Geo geo geo geo geo geo geo geo geo</td>
-                </tr>
-            </tbody></table>
-            <h3>Grade 2</h3>
-            <table>
-                <tbody><tr>
-                    <th>Subject</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>Math</td>
-                    <td>math math math math math math math math </td>
-                </tr>
-                <tr>
-                    <td>English</td>
-                    <td>Engl enlg engl engl engl engl engl engl</td>
-                </tr>
-                <tr>
-                    <td>Arabic</td>
-                    <td>Arab arab arab arab arab arab arab arab</td>
-                </tr>
-                <tr>
-                    <td>Science</td>
-                    <td>Sci sci sci sci sci sci sci sci sci sci</td>
-                </tr>
-                <tr>
-                    <td>History</td>
-                    <td>Hist hist hist hist hist hist hist hist</td>
-                </tr>
-                <tr>
-                    <td>Geography</td>
-                    <td>Geo geo geo geo geo geo geo geo geo</td>
-                </tr>
-            </tbody></table>
-            <h3>Grade 3</h3>
-            <table>
-                <tbody><tr>
-                    <th>Subject</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>Math</td>
-                    <td>math math math math math math math math </td>
-                </tr>
-                <tr>
-                    <td>English</td>
-                    <td>Engl enlg engl engl engl engl engl engl</td>
-                </tr>
-                <tr>
-                    <td>Arabic</td>
-                    <td>Arab arab arab arab arab arab arab arab</td>
-                </tr>
-                <tr>
-                    <td>Science</td>
-                    <td>Sci sci sci sci sci sci sci sci sci sci</td>
-                </tr>
-                <tr>
-                    <td>History</td>
-                    <td>Hist hist hist hist hist hist hist hist</td>
-                </tr>
-                <tr>
-                    <td>Geography</td>
-                    <td>Geo geo geo geo geo geo geo geo geo</td>
-                </tr>
-            </tbody></table>
-        </div>
-        <div id="anno">
-            <h2>Announcements</h2>
-            <ul>
-                <li><a href="#">Announcement 1</a></li>
-                <li><a href="#">Announcement 2</a></li>
-                <li><a href="#">Announcement 3</a></li>
-                <li><a href="#">Announcement 4</a></li>
-                <li><a href="#">Announcement 5</a></li>
-                <li><a href="#">Announcement 6</a></li>
-        </ul></div>
-        <div id="news">
-            <h2>News</h2>
-            <ul>
-                <li><a href="#">News 1</a></li>
-                <li><a href="#">News 2</a></li>
-                <li><a href="#">News 3</a></li>
-                <li><a href="#">News 4</a></li>
-                <li><a href="#">News 5</a></li>
-                <li><a href="#">News 6</a></li>
-                
-        </ul></div>
-        <div id="calender">
-            <h2>Calender</h2>
-            <table>
-                <tbody><tr>
-                    <th>Month</th>
-                    <th>Event</th>
-                    <th>Deadline</th>
-                </tr>
-                <tr>
-                    <td>January</td>
-                    <td>Event 1</td>
-                    <td>1/1/2021</td>
-                </tr>
-                <tr>
-                    <td>February</td>
-                    <td>Event 2</td>
-                    <td>1/1/2021</td>
-                </tr>
-                <tr>
-                    <td>March</td>
-                    <td>Event 3</td>
-                    <td>1/1/2021</td>
-                </tr>
-                <tr>
-                    <td>April</td>
-                    <td>Event 4</td>
-                    <td>1/1/2021</td>
-                </tr>
-                <tr>
-                    <td>May</td>
-                    <td>Event 5</td>
-                    <td>1/1/2021</td>
-                </tr>
-                <tr>
-                    <td>June</td>
-                    <td>Event 6</td>
-                    <td>1/1/2021</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Event 7</td>
-                    <td>1/1/2021</td>
-                </tr>
-            </tbody></table>
-        </div>
-    </section>
-    <section id="payment">
-        <div id="fees">
-            <h2>Fees</h2>
-            <div>
-                <table>
-                    <tbody><tr>
-                        <th>Grade</th>
-                        <th>Amount</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>1000</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>2000</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>3000</td>
-                    </tr>
-
-                </tbody></table>
-            </div>
-        </div>
-        <div id="Pcalender">
-            <h2>Payment Calender</h2>
-            <table>
-                <tbody><tr>
-                    <th>Month</th>
-                    <th>Amount</th>
-                    <th>Deadline</th>
-                </tr>
-                <tr>
-                    <td>January</td>
-                    <td>1000</td>
-                    <td>1/1/2021</td>
-                </tr>
-                <tr>
-                    <td>February</td>
-                    <td>2000</td>
-                    <td>1/1/2021</td>
-                </tr>
-                <tr>
-                    <td>March</td>
-                    <td>3000</td>
-                    <td>1/1/2021</td>
-                </tr>
-            </tbody></table>
-        </div>
-        <div id="Scholarship">
-            <h2>Scholarships</h2>
-            <table>
-                <tbody><tr>
-                    <th>Scholarship</th>
-                    <th>Amount</th>
-                    <th>Deadline</th>
-                    <th>Requirements</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>merit</td>
-                    <td>100%</td>
-                    <td>1/1/2021</td>
-                    <td>High grades</td>
-                    <td>For students with high grades</td>
-                </tr>
-                <tr>
-                    <td>athlete</td>
-                    <td>50%</td>
-                    <td>1/1/2021</td>
-                    <td>capaple of playing a sport</td>
-                    <td>For students who are capable of playing a sport</td>
-                </tr>
-                <tr>
-                    <td>minority</td>
-                    <td>25%</td>
-                    <td>1/1/2021</td>
-                    <td>Minority</td>
-                    <td>For students who are minorities</td>
-                </tr>
-            </tbody></table>
-        </div>
-        <div id="specialFund">
-            <h2>Special case funds</h2>
-            <table>
-                <tbody><tr>
-                    <th>Special case</th>
-                    <th>Amount</th>
-                    <th>Deadline</th>
-                    <th>Requirements</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>orphan</td>
-                    <td>100%</td>
-                    <td>1/1/2021</td>
-                    <td>Death certificate</td>
-                </tr>
-                <tr>
-                    <td>disabilities</td>
-                    <td>50%</td>
-                    <td>1/1/2021</td>
-                    <td>Medical report</td>
-                </tr>
-                <tr>
-                    <td>veteran</td>
-                    <td>25%</td>
-                    <td>1/1/2021</td>
-                    <td>Army ID</td>
-                </tr>
-                </tbody></table>
-        </div>
-
-    </section>
-    <section id="register">
-        <img src="./assets/images/PhotoReal_A_school_1.jpg">
-
-        <form method="post" action="">
-            <div id="title">
-                <h2>Registration</h2>
-            </div>
-            <div id="triangles">
-                <div id="triangle1"></div>
-                <div id="triangle2"></div>
-            </div>   
-            <div id="formIn">
-
-                <fieldset id="formPI">
-                    <legend>Personal info</legend>
-                    <div> 
-                        <input type="text" id="FN" name="FirstName" size="15" maxlength="15" class="inside" placeholder="First name">
-                    </div>     
-                    <div>
-                        <input type="text" id="LN" name="LastName" size="15" maxlength="20" class="inside" placeholder="Last name">
+                <div class="container">
+                    <div class="wrapper">
+                        <div class="wrapper-holder">
+                            <div id="slidee1"><img class="slidee" src="./assets/images/PhotoReal_A_school_1.jpg"></div>
+                            <div id="slidee2"><img class="slidee"src="./assets/images/PhotoReal_school_building_3.jpg"></div>
+                            <div id="slidee3"><img class="slidee"src="./assets/images/PhotoReal_school_playground_0.jpg"></div>
+                            <div id="slidee4"><img class="slidee"src="./assets/images/PhotoReal_school_playground_1.jpg"></div>
+                            <div id="slidee5"><img class="slidee"src="./assets/images/PhotoReal_school_playground_with_kids_playing_around_1.jpg"></div>
+                        </div>
                     </div>
-                    <div class="select">
-                        <select id="gender" name="gender">
-                            <option value="0">Select a gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="birthday">Birthdate :</label>
-                        <input type="date" id="birthday" name="birthday">
-                    </div>    
-                </fieldset> 
-    <!--  -->
-
-                <fieldset id="Acedmic">
-                    <legend>Academic Info</legend>
-                    <div class="select">
-                        <select id="GradeSys" name="gradeSys">
-                            <option value="null">Select Grade system</option>
-                            <option value="GPA">GPA</option>
-                            <option value="percentage">Percentage</option>
-                        </select>
-                    </div>
-                    <input type="text" name="grade" maxlength="4" size="4" class="inside" placeholder="Grade">
-                </fieldset>
-    <!--  -->
-                <fieldset id="contact2">
-                    <legend>Contact Info</legend>
-                    <input type="tel" name="phone" class="inside" placeholder="Phone Number">
-                    <input type="email" name="email" class="inside" placeholder="Email">
-                </fieldset>
-                <div class="comment">
-                    <label for="comm">Comment:</label>
-                    <textarea id="comm" name="comment" cols="35" rows="5" placeholder="Type your comment here"></textarea>
                 </div>
-    <!--  -->
-                <div id="button">
-                        <input type="submit" name="submit" value="Submit"> <input type="reset" name="reset" value="Reset">
-                </div>
-            </div>  
-        </form>
+            </div>
+        </div>
     </section>
-    <section id="contact">
-        <div id="triangles">
-            <div id="triangle1"></div>
-            <div id="triangle2"></div>
-        </div>
-        <div id="body2">
-        
-        <div id="map"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=cairo,egypt+(ProjeXt42%20school)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-            <a href="https://www.maps.ie/population/">Population calculator map</a>
-        </iframe></div>
-        <div id="address">
-            <ul>
-                <li><img><b>Location:</b> ProjeXt42 -Egypt<br>El-Montaza, Heliopolis, Cairo Governorate </li>
-                <li><img><b>P.O Box:</b> 51 El-Shorouk City - Behind City Hall, El-Shorouk, Cairo +202, EG</li>
-                <li><img><b>Call:</b>+(20) 26890500</li>
-                <li><img><b>Email:</b><a href="mailto:&quot;info@projeXt.com&quot;">info@projeXt.com</a></li>
-            </ul>
-        </div>
-        <div id="contacttable">
-            <table>
-                <tbody><tr>
-                    <th>Department</th>
-                    <th>Name</th>
-                    <th>phone</th>
-                    <th>Email</th>
-                </tr>
-                <tr>
-                    <td>CEO</td>
-                    <td>Abdelrahman Elsayed</td>
-                    <td>01000000000</td>
-                    <td><a href="mailto:&quot;"></a><a></a></td>
-                </tr>
-                <tr>
-                    <td>CEO</td>
-                    <td>Abdelrahman Elsayed</td>
-                    <td>01000000000</td>
-                    <td><a href="mailto:&quot;"></a><a></a></td>
-                </tr>
-                <tr>
-                    <td>CEO</td>
-                    <td>Abdelrahman Elsayed</td>
-                    <td>01000000000</td>
-                    <td><a href="mailto:&quot;"></a><a></a></td>
-                </tr>
-                <tr>
-                    <td>CEO</td>
-                    <td>Abdelrahman Elsayed</td>
-                    <td>01000000000</td>
-                    <td><a href="mailto:&quot;"></a><a></a></td>
-                </tr>
-            </tbody></table>
-        </div>
-        <div id="messageme">
-            <form action="" method="post">
-                <fieldset>
-                    <legend>Message us</legend>
-                    <div>
-                        <input type="text" id="name" name="name" size="15" maxlength="15" class="inside" placeholder="Name">
-                    </div>
-                    <div>
-                        <input type="text" id="email" name="email" size="15" maxlength="15" class="inside" placeholder="Email">
-                    </div>
-                    <div>
-                        <input type="text" id="subject" name="subject" size="15" maxlength="15" class="inside" placeholder="Subject">
-                    </div>
-                    <div>
-                        <textarea id="message" name="message" rows="4" cols="50" placeholder="Message"></textarea>
-                    </div>
-                    <div>
-                        <input type="submit" value="Send">
-                    </div>
-                </fieldset>
-        </form></div>
-    </div>
-    </section>
+    
 
         <div id="ending">
         <div class="ending"></div>
