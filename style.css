@@ -41,7 +41,7 @@ section{
     z-index: -1;
     /*z-index controls the position of the "layer" (element) -1 is lower than 1, just worksunder special positining and display conditions*/
 } */
-#home h2{
+/* #home h2{
     top: 70px;
   position: fixed;
   font-size: 12px;
@@ -55,7 +55,7 @@ section{
   filter: drop-shadow(1px 1px 2px #00260055);
   z-index: 0.5;
   /*its better to place the headlines under the section and also consider h1 for seo optimization (i also need to look new rules up, meh)*/
-}
+} */
 .homewrapper{
     position: relative;
     margin-right: 25%;
