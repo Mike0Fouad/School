@@ -3,47 +3,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="./style.css">
     <style>
+        body{
+            background-image:url("./assets/images/PhotoReal_A_school_1.jpg") ;
+            background-size: cover;
+        }
         #contact{
-            width: 100vh;
+            margin-top: 100px;
+            width: 90vh;
         }
         iframe{
             width: 100%;
             height: 100%;
+            border-radius: 10%;
         }
         #body4{
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             grid-gap:50px;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
         }
         #body4>div{
-            background-color: blanchedalmond;
-            border-radius: 10px;
+            background-color: #333;
+            border-radius: 10%;
+            height: 70vh;
+
 
         }
         #body4>div:hover{
-            background-color: blueviolet;
+            background-color: #555;
             box-shadow: 10px 10px 10px rgba(0,0,0,0.6);
         }
+        #address{
+            font-size: 1.5em;
+            padding
+        }
+        #address>h2{text-align:center}
         table{
-            width: 100%;
+            border-radius: 10%;
+            overflow: hidden;
+            width: 50vw;
+            height: 100%;
+            text-align: center;
             border-collapse: collapse;
         }
-        table, th, td {
-            
-            border: 1px solid black;
-            
-        }
+        
         tr{
             padding: 10px;
-            background-color: brown;
+
         }
         tr:hover{
             background-color: rgb(151, 151, 151);
         }
-
-
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
         
     </style>
     <title>contact us</title>
@@ -69,6 +85,7 @@
                 </iframe>
             </div>
         <div id="address">
+            <h2>Address</h2>
             <ul>
                 <li><img><b>Location:</b> ProjeXt42 -Egypt<br>El-Montaza, Heliopolis, Cairo Governorate </li>
                 <li><img><b>P.O Box:</b> 51 El-Shorouk City - Behind City Hall, El-Shorouk, Cairo +202, EG</li>
@@ -78,7 +95,7 @@
         </div>
         <div id="contacttable">
             <table>
-                <tbody><tr>
+                <tbody><tr id="firstrow">
                     <th>Department</th>
                     <th>Name</th>
                     <th>phone</th>
@@ -108,6 +125,18 @@
                     <td>01000000000</td>
                     <td><a href="mailto:;">asdasdasdasda</a></td>
                 </tr>
+                <tr>
+                    <td>CEO</td>
+                    <td>Abdelrahman Elsayed</td>
+                    <td>01000000000</td>
+                    <td><a href="mailto:;">asdasdasdasda</a></td>
+                </tr>
+                <tr id="lastrow">
+                    <td>CEO</td>
+                    <td>Abdelrahman Elsayed</td>
+                    <td>01000000000</td>
+                    <td><a href="mailto:;">asdasdasdasda</a></td>
+                </tr>
             </tbody></table>
         </div>
         <div id="messageme">
@@ -126,17 +155,17 @@
                     <div>
                         <textarea id="message" name="message" rows="4" cols="50" placeholder="Message"></textarea>
                     </div>
-                    <div>
-                        <input type="submit" value="Send">
+                    <div id="button">
+                        <input type="submit"  value="Send">
                     </div>
                 </fieldset>
         </form></div>
     </div>
     </section>
 
-        <div id="ending">
-            <div class="ending"></div>
-            <hr>
-                <p>Copyright 2023 © Projext42 - Egypt. All Rights Reserved.</p>
-            </div> 
+    <div id="ending">
+        <div class="ending"></div>
+        <hr>
+            <p>Copyright 2023 © Projext42 - Egypt. All Rights Reserved.</p>
+    </div> 
 </body></html>

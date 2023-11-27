@@ -9,7 +9,7 @@
     scroll-behavior: smooth;
     -webkit-scroll-behavior: smooth; /*weblit helps for crossbrowser compatibility*/
 }
-body {
+/* body {
     width:100vw;
     height: 100vh;
     display: grid;
@@ -20,10 +20,10 @@ body {
                          "ending";
     margin: 0;
     min-height: 100vh;
-    overflow-y: unset; /*u can set later to scroll, but first clean mispositioning in div*/
+    overflow-y:hidden; /*u can set later to scroll, but first clean mispositioning in div*/
     scroll-behavior: smooth; /*let u scroll smoother, also we need to adjust the scrolling so the section is adjusted to header or let header stop before section, so the start of it is visible*/
-}
-section{
+} */
+/* section{
     position: relative;
     height:100%;
     width:100%;
@@ -34,13 +34,13 @@ section{
     top:0;
     bottom:0;
     margin:0;
-    padding: 5%;
-}
+    padding: 0;
+} */
 /* #home{
     background: blue;
-    z-index: -1;
+    z-index: -1;}
     /*z-index controls the position of the "layer" (element) -1 is lower than 1, just worksunder special positining and display conditions*/
-} */
+}
 /* #home h2{
     top: 70px;
   position: fixed;
@@ -55,13 +55,13 @@ section{
   filter: drop-shadow(1px 1px 2px #00260055);
   z-index: 0.5;
   /*its better to place the headlines under the section and also consider h1 for seo optimization (i also need to look new rules up, meh)*/
-} */
-.homewrapper{
+/*} */
+/* .homewrapper{
     position: relative;
     margin-right: 25%;
     display: contents;
     /*try never to let a div unnamed, also classNames are used more than ids, but depends on ur workstyle, so i gave it a name*/
-}
+} */
 #Logo{
     position: relative;
     z-index: -2;
@@ -69,14 +69,14 @@ section{
 #Logo img{
     display:flex;
     margin:20px auto 0 auto;
-    filter: drop-shadow(0px 0px 27px #23d8b7bb)
-    drop-shadow(1px 1px .1px #ffffffaa) 
-    drop-shadow(1px -1px .1px #ffffffaa);
+    filter: drop-shadow(0px 0px 27px #1f2423bb)
+    drop-shadow(1px 1px .1px #181111aa) 
+    drop-shadow(1px -1px .1px #000000aa);
 }
 #info{
     background: violet;
     position: relative;
-  display: table; /*or try inline-flex for more vertical design*/
+    display: table; /*or try inline-flex for more vertical design*/
 }
 #payment{
     background: yellow;
@@ -85,19 +85,19 @@ section{
     display: table; /*or try inline-flex for more vertical design*/
 
 }
-#contact{
+/* #contact{
     background: green;
     position: relative;
     padding:25% 50% 50% 25%;
-    display: table; /*or try inline-flex for more vertical design*/
-}
+    display: table; /*or try inline-flex for more vertical design
+} */
 /* headinggggggggggggggggggggggggggggggggggggggggggg */
 a>img {
     position: relative;
     justify-content:center;
 	align-items:center;
     height:86px;
-	width:106px;
+	width: 100px;
     filter:invert(2);
     opacity: .8;
     transform:scale(.9);
@@ -141,7 +141,6 @@ text-align: center;
     transition: all ease-in-out .3s;
     transform:scale(.85);
     filter: drop-shadow(0px 3px 3px #23b499aa) drop-shadow(1px 1px 2px #001226);
-    ;
 }
 .page:hover{
     background: radial-gradient(#23d8b799 40%,#2362b4aa);
@@ -179,11 +178,6 @@ h1>img {
 #register {
     min-height:140vh;
     position: relative;
-    grid-area: "content";
-    display: inline-grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr;
-    /*background: red;*/
 }
 #register>img {
     width: 100%;
@@ -238,22 +232,20 @@ form{
     border-bottom:100px solid grey;
     position:relative;
     z-index:3;
-    margin-top:-25px;
+    margin-top:11vh;
     left:0px;
 }
- h2{
+#title>h2{
     text-align: center;
     position: relative;
     margin-top:30px;
     color: aliceblue;
 }
 
-
 #formIn {
     position: relative;
     margin-top:70px;
     margin-bottom:40px;
-    z-index: 4;
 }
 fieldset{
     border-radius: 9px;
@@ -329,13 +321,13 @@ input[type='text']:hover::placeholder {
 .comment {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr auto;
 }
 .comment > label[for="comm"] {
     text-align: center;
     width:150px; /*was 20%, care if using % can break on too small or too big devices, doesnt scale always good, u can read about rem or em if u want more adjustable sizes, but can also be exhaustng to handle*/
     position: relative;
-    font-size: 20px;
+    font-size: 1.3em;
     padding:10px;
     background-color: #5c6664;
     border-radius: 20px;
@@ -345,7 +337,6 @@ input[type='text']:hover::placeholder {
     color:white;
 }
 textarea {
-    z-index: 4;
     position: relative;
     margin-top:-9px; /*was 30*/
     margin-left: 70px;
