@@ -3,29 +3,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="./style.css">
     <style>
+        body{
+            background-image:url("./assets/images/PhotoReal_A_school_1.jpg") ;
+            background-size: cover;
+        }
         home{
-            width: 100vh;
+            width: 100vw;
         }
         #body4{
+
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 50vh 50vh;
             height: 100%;
             width:100%;
             margin-top:140px;
-            padding-bottom: 130px;
+            margin-bottom: 70vh;
             gap: 10px;
         }
+        
         #body4 p{
             font-size: 20px;
             font-weight: 500;
             margin: 0 0 0 20px;
             padding: 0;
-            
         }
-        #vision,#mission {
-            background-color: rgb(123, 123, 250);
+        #mission>h2,#vision>h2{
+            text-align: center;
+        }
+        #Vpara,#Mpara {
+            background-color: rgb(215, 235, 238);
             width:75vh;
+            margin-left:10%;
             padding:10px;
             border-radius: 10px;
             box-shadow: 10px 10px 10px rgba(0,0,0,0.6);
@@ -36,10 +45,10 @@
 
         .container{
             position:relative;
+            margin-bottom: 30vh;
         }
         .container .wrapper{
-            width: 100vh;
-            height: vh;
+            
             box-shadow: 10px 10px 10px rgba(0,0,0,0.6);
             margin: 5rem auto;
             overflow: hidden;
@@ -91,19 +100,19 @@
         <div id="body4">
             <div id="vision">
                 <h2>Vision</h2>
-                <p>
+                <div id="Vpara"><p>
                     ProjeXt42 is a school that aims to teach students the basics of programming and how to use it in real life.
                     We also aim to teach students how to work in teams and how to manage their time.ProjeXt42 is a school that aims to teach students the basics of programming and how to use it in real life.
                     We also aim to teach students how to work in teams and how to manage their time.
-                </p>
+                </p></div>
             </div>
             <div id="mission">
                 <h2>Mission</h2>
-                <p>
+                <div id="Mpara"><p>
                     ProjeXt42 is a school that aims to teach students the basics of programming and how to use it in real life.
                     We also aim to teach students how to work in teams and how to manage their time.ProjeXt42 is a school that aims to teach students the basics of programming and how to use it in real life.
                     We also aim to teach students how to work in teams and how to manage their time.
-                </p>
+                </p></div>
             </div>
             <div id="Logo">
                 <img src="./assets/icons/image-removebg-preview.png">
