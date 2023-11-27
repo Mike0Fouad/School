@@ -10,8 +10,8 @@
     -webkit-scroll-behavior: smooth; /*weblit helps for crossbrowser compatibility*/
 }
 body {
-    width:100vw;
-    height: 100vh;
+    width:100%;
+    height: 0vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -19,7 +19,6 @@ body {
                          "content"
                          "ending";
     margin: 0;
-    min-height: 100vh;
     overflow-y: unset; /*u can set later to scroll, but first clean mispositioning in div*/
     scroll-behavior: smooth; /*let u scroll smoother, also we need to adjust the scrolling so the section is adjusted to header or let header stop before section, so the start of it is visible*/
 }
@@ -27,7 +26,7 @@ section{
     position: relative;
     height:100%;
     width:100%;
-    min-width:100vw;
+    min-width:auto;
     min-height:auto;
     left:0;
     right:0;
@@ -39,7 +38,11 @@ section{
 #home{
     /* background: blue;*/
     z-index: -1;
-    /*z-index controls the position of the "layer" (element) -1 is lower than 1, just worksunder special positining and display conditions*/
+    /*z-ind
+    ex controls the position of the "layer" (element) -1 is lower than 1, just worksunder special positining and display conditions*/
+    background-image: url("./assets/images/PhotoReal_school_building_3.jpg");
+    background-position: center;
+    background-size: cover;
 }
 #home h2{
     top: 70px;
@@ -68,36 +71,38 @@ section{
 }
 #Logo img{
     display:flex;
-    margin:20px auto 0 auto;
+    max-width: 80%;
+    margin:60px auto 0 auto;
     filter: drop-shadow(0px 0px 27px #23d8b7bb)
     drop-shadow(1px 1px .1px #ffffffaa) 
     drop-shadow(1px -1px .1px #ffffffaa);
+    scale: .8;
 }
 #vision,
 #mission{
     color: white;
     background-color: #71a1a1aa;
-    backdrop-filter: blur(13px);
+    backdrop-filter: blur(7px);
 /*    margin: 10px 0;*/
     padding: 20px;
     z-index: 0;
 }
 #vision{
-    border-radius: 0 25px;
+    border-radius: 25px 25px 0 0;
 }
 #mission{
-    border-radius: 25px 0px;
+    border-radius: 25px 25px 0 0;
 }
 .containerhome{
     position:relative;
     max-width: 100vw;
+    padding:0 10%;
 }
 .containerhome .wrapperhome{
     width: 100%;
     height: auto;
-    margin: 0 20px;
+    /*margin: 0 20px;*/
     overflow: hidden;
-    border-radius: 25px;
 }
 .containerhome .wrapper-holderhome{
     display:grid;
@@ -106,7 +111,7 @@ section{
     width:100%;
 }
 .wrapper-holderhome{
-    animation: slidehome 33s alternate infinite;
+    animation: slidehome 33s alternate-reverse infinite;
     animation-timing-function: linear;
 }
 .wrapper-holderhome>*{
@@ -126,26 +131,61 @@ section{
     95% { transform: translateX(0); }
     100% { transform: translateX(-100); }
 }
-.containerhome button{
-    font-size: 1.5em;
+.containerhome button,
+.fakepseudov,
+.fakepseudom{
+    font-size: 1.25em;
     font-weight: 300;
     color: white;
     background-color: #71a1a1aa;
     backdrop-filter: blur(13px);
     border: none;
     padding: 5px;
+    width: 124px;
+    height: 70px;
+    justify-content: center;
+    text-align: center;
 }
 .buttonv{
     position: relative;
 display: inline-flex;
-    align-items: left;
-    border-radius: 25px 0;
+    align-items: center;
+    border-radius: 0 25px;
     justify-content: flex-start;
+    animation: slideactivebtn 33s ease-in-out alternate infinite;
+}
+.fakepseudov{
+    position: absolute;
+    display: flex;
+    border-radius: 0 25px ;
+    align-items: center;
+    margin-top: -70px;
+    z-index: -1;
 }
 .buttonm{
-    position: relative;
-display: inline-flex;
-    border-radius: 0 25px;
+    position: absolute;
+    display: absolute;
+    border-radius: 25px 0;
+    right: 10%;
+    animation: slideactivebtn ease-in-out 33s alternate-reverse infinite;
+}
+.fakepseudom{
+    position: absolute;
+    display: flex;
+    border-radius: 25px 0;
+    right: 10%;
+    margin-top: -70px;
+    align-items: center;
+    z-index: -1;
+}
+.buttonm:active,
+.buttonv:active{
+    background: radial-gradient(#23b499aa 10%,#2362b466);
+}
+@keyframes slideactivebtn { /*0 50 / 55 95 /100*/
+    0%,53%,97%,100% {  background:radial-gradient(#23b499aa 10%,#2362b477);opacity: 0; }
+    3%,50% { background:radial-gradient(#23b499aa 10%,#2362b477); opacity:.5 }
+    6%,47% { background:radial-gradient(#23b499aa 10%,#2362b477); opacity: 1;}
 }
 #info{
     background: violet;
@@ -251,24 +291,27 @@ h1>img {
 }
 /* contentttttttttttttttttttttttttttttttttttttttttt */
 #register {
-    min-height:140vh;
+    min-height:120vh;
     position: relative;
     grid-area: "content";
     display: inline-grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 1fr;
     /*background: red;*/
+    background-image: url("./assets/images/PhotoReal_A_school_1.jpg");
+    background-position: center;
+    background-size: cover;
 }
-#register>img {
+/*#register>img {
     width: 100%;
     height: 100vh;
     min-height: 100%;
     object-fit: cover;
-    position: fixed; /*set to absolute just for testing*/
+    position: absolute; /*set to absolute just for testing
     top:0;
     right:0px;
     z-index: -2;
-}
+} */
 form {
     background-color: #71a1a1aa; /*the aa at the end is the opacity/transparence, delete it for original color 00 (0 opacity) - ff (full opacity)*/
     backdrop-filter: blur(13px); /*makes the background blurry, delete it if u dont want and u can also try invert(100%) eg for cool x-ray effect*/
@@ -467,10 +510,16 @@ textarea {
 textarea:hover::placeholder{
     color: #2b2e2e; ; 
 }
+#button{
+    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 #button >*{
     position: relative;
     margin-top:10px; /*was 40*/
-    margin-left: 100px; /*was 10%*/
+    margin-left: 5%; /*was 10%*/
     width: 150px;
     height: 35px;
     color: white;
@@ -564,4 +613,26 @@ hr {
     border: .2px solid #fff;
     margin-top:5px;
     padding: 0 0px;
+}
+
+@media screen and (min-width:1000px){
+    #Logo img{
+        display:flex;
+        max-width: 80%;
+        margin:0px auto -10px auto;
+    }
+}
+@media screen and (max-width:1000px){
+    #Logo img{
+        display:flex;
+        max-width: 80%;
+        margin:10px auto -20px auto;
+    }
+}
+@media screen and (max-width:790px){
+    #Logo img{
+        display:flex;
+        max-width: 80%;
+        margin:40px auto -20px auto;
+    }
 }
