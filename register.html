@@ -1,6 +1,7 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
     <link type="text/css" rel="stylesheet" href="./style.css">
     <title>Register</title>
 </head>
@@ -18,7 +19,8 @@
     
     <section id="register">
         <img src="./assets/images/PhotoReal_A_school_1.jpg">
-        <form method="post" action="">
+
+        <form method="post" action="./shit.php" onsubmit="return validform()">
             <div id="title">
                 <h2>Registration</h2>
             </div>
@@ -28,10 +30,12 @@
                 <fieldset id="formPI">
                     <legend>Personal info</legend>
                     <div> 
-                        <input type="text" id="FN" name="FirstName" size="15" maxlength="15" class="inside" placeholder="First name">
+                        <input type="text" id="FN" name="FirstName" size="15" maxlength="15" class="inside" placeholder="" onblur="Errormessage(validename('FN'),'FNerror')">
+                        <p id="FNerror"></p>
                     </div>     
                     <div>
-                        <input type="text" id="LN" name="LastName" size="15" maxlength="20" class="inside" placeholder="Last name">
+                        <input type="text" id="LN" name="LastName" size="15" maxlength="20" class="inside" placeholder="Last name" onblur="Errormessage(validename('LN'),'LNerror')">
+                        <p id="LNerror"></p>
                     </div>
                     <div class="select">
                         <select id="gender" name="gender">
@@ -39,6 +43,7 @@
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
+                        <p id="GDerror"></p>
                     </div>
                     <div>
                         <label for="birthday">Birthdate :</label>
@@ -49,20 +54,25 @@
 
                 <fieldset id="Acedmic">
                     <legend>Academic Info</legend>
+
                     <div class="select">
+
                         <select id="GradeSys" name="gradeSys">
                             <option value="null">Select Grade system</option>
                             <option value="GPA">GPA</option>
                             <option value="percentage">Percentage</option>
                         </select>
+                        <p id="GSerror"></p>
                     </div>
-                    <input type="text" name="grade" maxlength="4" size="4" class="inside" placeholder="Grade">
+                    <input type="text" id="grade" name="igrade" maxlength="4" size="4" class="inside" placeholder="Grade">
                 </fieldset>
     <!--  -->
                 <fieldset id="contact2">
                     <legend>Contact Info</legend>
-                    <input type="tel" name="phone" class="inside" placeholder="Phone Number">
-                    <input type="email" name="email" class="inside" placeholder="Email">
+                    <input type="tel"id='phone' name="phone" class="inside" placeholder="Phone Number">
+                    <p id="PNerror"></p>
+                    <input type="email" id='email'name="email" class="inside" placeholder="Email">
+                    <p id="EMerror"></p>
                 </fieldset>
                 <div class="comment">
                     <label for="comm">Comment:</label>
@@ -70,12 +80,12 @@
                 </div>
     <!--  -->
                 <div id="button">
-                        <input type="submit" name="submit" value="Submit"> <input type="reset" name="reset" value="Reset">
+                        <input type="submit" name="submit" value="Submit">
+                        <input type="reset" name="reset" value="Reset">
                 </div>
             </div>  
         </form>
     </section>
-    
 
         <div id="ending">
         <div class="ending"></div>

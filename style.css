@@ -20,7 +20,7 @@
                          "ending";
     margin: 0;
     min-height: 100vh;
-    overflow-y:hidden; /*u can set later to scroll, but first clean mispositioning in div*/
+    overflow-y: unset; /*u can set later to scroll, but first clean mispositioning in div*/
     scroll-behavior: smooth; /*let u scroll smoother, also we need to adjust the scrolling so the section is adjusted to header or let header stop before section, so the start of it is visible*/
 } */
 /* section{
@@ -56,12 +56,12 @@
   z-index: 0.5;
   /*its better to place the headlines under the section and also consider h1 for seo optimization (i also need to look new rules up, meh)*/
 /*} */
-/* .homewrapper{
+.homewrapper{
     position: relative;
     margin-right: 25%;
     display: contents;
     /*try never to let a div unnamed, also classNames are used more than ids, but depends on ur workstyle, so i gave it a name*/
-} */
+}
 #Logo{
     position: relative;
     z-index: -2;
@@ -69,14 +69,14 @@
 #Logo img{
     display:flex;
     margin:20px auto 0 auto;
-    filter: drop-shadow(0px 0px 27px #1f2423bb)
-    drop-shadow(1px 1px .1px #181111aa) 
-    drop-shadow(1px -1px .1px #000000aa);
+    filter: drop-shadow(0px 0px 27px #23d8b7bb)
+    drop-shadow(1px 1px .1px #ffffffaa) 
+    drop-shadow(1px -1px .1px #ffffffaa);
 }
 #info{
     background: violet;
     position: relative;
-    display: table; /*or try inline-flex for more vertical design*/
+  display: table; /*or try inline-flex for more vertical design*/
 }
 #payment{
     background: yellow;
@@ -141,6 +141,7 @@ text-align: center;
     transition: all ease-in-out .3s;
     transform:scale(.85);
     filter: drop-shadow(0px 3px 3px #23b499aa) drop-shadow(1px 1px 2px #001226);
+    ;
 }
 .page:hover{
     background: radial-gradient(#23d8b799 40%,#2362b4aa);
@@ -178,6 +179,11 @@ h1>img {
 #register {
     min-height:140vh;
     position: relative;
+    grid-area: "content";
+    display: inline-grid;
+    grid-template-columns: 50vw 50vw;
+    grid-template-rows: 1fr;
+    /*background: red;*/
 }
 #register>img {
     width: 100%;
@@ -232,7 +238,7 @@ form{
     border-bottom:100px solid grey;
     position:relative;
     z-index:3;
-    margin-top:11vh;
+    margin-top:-25px;
     left:0px;
 }
 #title>h2{
@@ -242,10 +248,12 @@ form{
     color: aliceblue;
 }
 
+
 #formIn {
     position: relative;
     margin-top:70px;
     margin-bottom:40px;
+    z-index: 4;
 }
 fieldset{
     border-radius: 9px;
@@ -337,6 +345,7 @@ input[type='text']:hover::placeholder {
     color:white;
 }
 textarea {
+    z-index: 4;
     position: relative;
     margin-top:-9px; /*was 30*/
     margin-left: 70px;
