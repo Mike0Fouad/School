@@ -95,6 +95,7 @@ section{
 #mission{
     transform: translateX(-100%);
     border-radius: 25px 25px 0 0;
+    margin: 1px 2px;
 }
 .containerhome{
     position:relative;
@@ -175,7 +176,7 @@ section{
 .buttonm:active,
 .buttonv:active + .fakepseudov,
 .buttonm:active + .fakepseudom{
-    scale: 1.1;
+    scale: 1.05;
     transform-origin: top;
     box-shadow: 0px 0px 7px #00265755;
     transition: all .3s ease-in-out;
@@ -422,7 +423,7 @@ form{
     grid-template-rows: auto auto auto auto;
     gap:0;
     max-width: 100%;
-    position:absolute;
+    /* position:absolute; */
     /* right:-50%; i reposition ur form a little here back to who it was before, adjust it to ur liking, wont touch ur triangles tho before i break it more :3 mosty i replace the top or right attributes with margin-top, margin-right etc, most of the time u can keep the heights u used or simply reverse them by deleting or adding a - ;) */
     right:0;
 }

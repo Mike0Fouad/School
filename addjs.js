@@ -11,7 +11,9 @@ const panimatedm = document.querySelector(".panimatedm");
 
 buttonmission.addEventListener("click", function () {
 
-  panimatedm.classList.remove("homeanimationv");
+  wrapper.classList.remove("homeanimation");
+
+  panimatedv.classList.remove("homeanimationv");
   panimatedm.classList.remove("homeanimationm");
 
   buttonmission.classList.remove("missionanimation");
@@ -25,6 +27,8 @@ buttonmission.addEventListener("click", function () {
 
 buttonvision.addEventListener("click", function () {
 
+  wrapper.classList.remove("homeanimation");
+
   panimatedm.classList.remove("homeanimationm");
   panimatedv.classList.remove("homeanimationv");
 
@@ -36,6 +40,7 @@ buttonvision.addEventListener("click", function () {
   buttonvision.style.background = "radial-gradient(#23b499dd 10%,#2362b4dd)";
   buttonmission.style.background = "radial-gradient(#23a7a766 10%,#2362b444)";
 });
+
 /*
 function vision() {
   document.querySelector(".wrapper-holderhome")
