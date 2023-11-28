@@ -1,6 +1,7 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js"></script>
     <!-- <link type="text/css" rel="stylesheet" href="./style.css"> -->
     <style>
         body{
@@ -37,9 +38,11 @@
         }
         #address{
             font-size: 1.5em;
-            padding
+            
         }
-        #address>h2{text-align:center}
+        #address>h2{
+            text-align:center;
+        }
         table{
             border-radius: 10%;
             overflow: hidden;
@@ -153,20 +156,24 @@
             </tbody></table>
         </div>
         
-            <form action="" id="messageme" method="post">
+            <form action="" id="messageme" method="post" onsubmit="validmessageform()">
                 <fieldset>
                     <legend>Message us</legend>
                     <div>
-                        <input type="text" id="name" name="name" size="15" maxlength="15" class="inside" placeholder="Name">
+                        <input type="text" id="name" name="name" size="15" maxlength="15" class="inside" placeholder=" Full Name">
+                        <p id="ernam"></p>
                     </div>
                     <div>
                         <input type="text" id="email" name="email" size="15" maxlength="15" class="inside" placeholder="Email">
+                        <p id="erem"></p>
                     </div>
                     <div>
                         <input type="text" id="subject" name="subject" size="15" maxlength="15" class="inside" placeholder="Subject">
+                        <p id="ersub"></p>
                     </div>
                     <div>
                         <textarea id="message" name="message" rows="4" cols="50" placeholder="Message"></textarea>
+                        <p id="ermsg"></p>
                     </div>
                     <div id="button">
                         <input type="submit"  value="Send">

@@ -1,9 +1,12 @@
+//firstname: FN|lastname: LN|gender:gender|birthday: birthday| grade system: GradeSys|grade:grade|phone:phone|email:email
 // need to add a hidden feedback element <p> to display the error message
 //validating name input
 function validename(inId){
-    var letters = /^[A-Za-z]+$/;
-    if(inId.match(letters)){
-        return true;
+    var letters = document.getElementById(inId).value;
+    if(letters==''){
+        return "please Enter a valid name\n";
+    }else if(letters.match(/^[a-zA-Z]*$/)){
+        return null;
     }else{
         return "Invalid Name\n";
     }
@@ -11,17 +14,33 @@ function validename(inId){
 //validating gender input
 function validgender(inId){
     var gender = document.getElementById(inId).value;
-    if (gender!=0){
-        return true;
+    if (gender!=''){
+        return null;
     }else{
         return "PLease select a gender\n";       
+    }
+}
+function validbirthday(inId){
+    var date = document.getElementById(inId).value;
+    if (date!=""){
+        return null;
+    }else{
+        return "PLease select a date\n";       
+    }
+}
+function validdate(inId){
+    var date = document.getElementById(inId).value;
+    if (date!=""){
+        return null;
+    }else{
+        return "PLease select a date\n";       
     }
 }
 //validating grade system
 function validgradesys(inId){
     var gradesys= document.getElementById(inId).value;
     if (gradesys!=0){
-        return "";
+        return null;
     } else {
         return "Please select a grade system\n";
     } 
@@ -31,47 +50,47 @@ function validgrade(inId,igrade){
     var gradesys= document.getElementById(inId).value; 
     var grade= document.getElementById(igrade).value;
     if (gradesys == "percentage"){
-        if (grade.match(/^[0-9]{1,3}$/)){
-            return "";
+        if (grade>=0.0,grade<=100.0){
+            return null;
         } else {
             return "Invalid Percentage\n";
         }
-    }else if (gradesys=='0') {
+    }else if (gradesys=='') {
         return "Please select a grade system\n";
     } else if(gradesys == "GPA"){
-        if (grade.match(/^[0-4]\.[0-9]{1,2}$/)){
-            return "";}
+        if (grade>=0.0,grade<=4.0){
+            convertTopercentage('GradeSys','igrade','submitgrade');
+            return null;}
         else {
             return "Invalid GPA\n";
         }
     }
 }
 //converting GPA to percentage
-function convertTopercentage(inId,igrade){
+function convertTopercentage(inId,igrade,location){
     var gradesys= document.getElementById(inId).value; 
     var grade= document.getElementById(igrade).value;
     if(gradesys == "GPA"){
-        return (GPA*100)/4;
+        var grade=document.getElementById(location).value= (grade*100)/4;
     }
 }
 //validating phone number
-function vaildphone(inId){
+function validphone(inId){
     var phone = document.getElementById(inId).value;
-    var phoneno = /^\d{10}$/;
-    if(phone.match(phoneno)){
-        return true;
+    if(phone.match(/^[0-9]{12}$/g)){
+        return null;
     }else{
-        return "Invalid Phone Number\n";
+        return "Please Enter Phone Number: please make sure to enter country code\n";
     }
 }
 //validating email
 function validmail(inId){
     var email = document.getElementById(inId).value;
-    var emaill=/^[a-zA-Z0-9_]+@[a-zA-Z0-9_]+\.[^\s@]+\.com$/;
+    var emaill=/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if(email.match(emaill)){
-        return true;
+        return null;
     }else{
-        return "Invalid Email Address\n";
+        return "Please enter Email Address\n";
     }
 }
 //validating form on change
@@ -80,11 +99,36 @@ function Errormessage(txt,id){
 }
 //validating form on submit
 function validform(){
-    var error = validename('#FN')+validename()+validgender('#gender')+vaildphone()+validmail();
-    convertTopercentage('gradesys','grade');
-    if (error == ""){
-        return true;}
-    else{
-        alert(error);
-        return false;}
+    var err = validename('FN')+validename('LN')+validgender('gender')+validphone('phone')+validmail('email')+validbirthday('birthday')+validgrade('GradeSys','grade');
+    if (err!=null){alert(err);}
 }  
+function validletters(inId){
+    var letters = document.getElementById(inId).value;
+    if(letters.length<3){
+        return "please Enter a valid "+ inId+"\n";
+    }else if(letters.match(/^[a-zA-Z _ -]$/g)){
+        return null;
+    }else{
+        return "Your"+ inId+ "must be only letters\n";
+    }
+}
+function validmessage(inId){
+    var message = document.getElementById(inId).value;
+    if(message==''){
+        return "Your input shouldnt be less than 50 charchaters \n";
+    }else if(letters.length>50){
+        return null;
+    }else{
+        return "Your Input must be only letters\n";
+    }
+}
+function validmessageform(){
+    var err=validletters('name')+validmail('email')+validletters('subject')+validmessage('message');
+    if (err!=null){
+        Errormessage(validletters('name'),'ernam');
+        Errormessage(validmail('email'),'erem');
+        Errormessage(validletters('subject'),'ersub');
+        Errormessage(validmessage('message'),'ermsg');
+        alert(err);
+    }
+}

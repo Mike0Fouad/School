@@ -30,7 +30,7 @@
                 <fieldset id="formPI">
                     <legend>Personal info</legend>
                     <div> 
-                        <input type="text" id="FN" name="FirstName" size="15" maxlength="15" class="inside" placeholder="" onblur="Errormessage(validename('FN'),'FNerror')">
+                        <input type="text" id="FN" name="FirstName" size="15" maxlength="15" class="inside" placeholder="First name" onblur="Errormessage(validename('FN'),'FNerror')">
                         <p id="FNerror"></p>
                     </div>     
                     <div>
@@ -38,16 +38,18 @@
                         <p id="LNerror"></p>
                     </div>
                     <div class="select">
-                        <select id="gender" name="gender">
-                            <option value="0">Select a gender</option>
+                        <select id="gender" name="gender" onblur="Errormessage(validgender('gender'),'GDerror')">
+                            <option value=''>Select a gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
                         </select>
-                        <p id="GDerror"></p>
+                        
                     </div>
+                    <p id="GDerror"></p>
                     <div>
                         <label for="birthday">Birthdate :</label>
-                        <input type="date" id="birthday" name="birthday">
+                        <input type="date" id="birthday" name="birthday" onblur="Errormessage(validbirthday('birthday'),'BDerror')">
+                        <p id="BDerror"></p>
                     </div>    
                 </fieldset> 
     <!--  -->
@@ -57,21 +59,22 @@
 
                     <div class="select">
 
-                        <select id="GradeSys" name="gradeSys">
-                            <option value="null">Select Grade system</option>
+                        <select id="GradeSys" name="gradeSys" onblur>
+                            <option value=''>Select Grade system</option>
                             <option value="GPA">GPA</option>
                             <option value="percentage">Percentage</option>
                         </select>
-                        <p id="GSerror"></p>
                     </div>
-                    <input type="text" id="grade" name="igrade" maxlength="4" size="4" class="inside" placeholder="Grade">
+                    <p id="GSerror"></p>
+                    <input type="text" id="grade" name="igrade" maxlength="4" size="4" class="inside" placeholder="Grade" onfocus="Errormessage(validgradesys('GradeSys'),'GSerror')" onblur="Errormessage(validgrade('GradeSys','grade'),'GRerror')">
+                    <p id="GRerror"></p>
                 </fieldset>
     <!--  -->
                 <fieldset id="contact2">
                     <legend>Contact Info</legend>
-                    <input type="tel"id='phone' name="phone" class="inside" placeholder="Phone Number">
+                    <input type="tel" id='phone' name="phone" class="inside" placeholder="Phone Number" onblur="Errormessage(validphone('phone'),'PNerror')">
                     <p id="PNerror"></p>
-                    <input type="email" id='email'name="email" class="inside" placeholder="Email">
+                    <input type="email" id='email'name="email" class="inside" placeholder="Email" onblur="Errormessage(validmail('email'),'EMerror')">
                     <p id="EMerror"></p>
                 </fieldset>
                 <div class="comment">
@@ -84,6 +87,7 @@
                         <input type="reset" name="reset" value="Reset">
                 </div>
             </div>  
+            <input type="hidden" name="action" id='submitgrade'value="">
         </form>
     </section>
 
