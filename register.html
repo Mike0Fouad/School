@@ -20,7 +20,7 @@
     <section id="register">
         <img src="./assets/images/PhotoReal_A_school_1.jpg">
 
-        <form method="post" action="" onsubmit="return validform()">
+        <form method="post" action="./Backend/register.php" onsubmit="return validform()">
             <div id="title">
                 <h2>Registration</h2>
             </div>
@@ -34,7 +34,7 @@
                         <p id="FNerror"></p>
                     </div>     
                     <div>
-                        <input type="text" id="LN" name="LastName" size="15" maxlength="20" class="inside" placeholder="Last name" onblur="Errormessage(validename('LN'),'LNerror')">
+                        <input type="text" id="LN" name="FirstName" size="15" maxlength="20" class="inside" placeholder="Last name" onblur="Errormessage(validename('LN'),'LNerror')">
                         <p id="LNerror"></p>
                     </div>
                     <div class="select">
@@ -86,8 +86,7 @@
                         <input type="submit" name="submit" value="Submit">
                         <input type="reset" name="reset" value="Reset">
                 </div>
-            </div>  
-            <input type="hidden" name="action" id='submitgrade'value="">
+            </div>
         </form>
     </section>
 

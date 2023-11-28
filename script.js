@@ -45,6 +45,10 @@ function validgradesys(inId){
         return "Please select a grade system\n";
     } 
 }
+
+//converting GPA to percentage
+
+
 //validating grade
 function validgrade(inId,igrade){
     var gradesys= document.getElementById(inId).value; 
@@ -66,14 +70,7 @@ function validgrade(inId,igrade){
         }
     }
 }
-//converting GPA to percentage
-function convertTopercentage(inId,igrade,location){
-    var gradesys= document.getElementById(inId).value; 
-    var grade= document.getElementById(igrade).value;
-    if(gradesys == "GPA"){
-        var grade=document.getElementById(location).value= (grade*100)/4;
-    }
-}
+
 //validating phone number
 function validphone(inId){
     var phone = document.getElementById(inId).value;
@@ -100,7 +97,7 @@ function Errormessage(txt,id){
 //validating form on submit
 function validform(){
     var err = validename('FN')+validename('LN')+validgender('gender')+validphone('phone')+validmail('email')+validbirthday('birthday')+validgrade('GradeSys','grade');
-    if (err!=null){alert(err);}
+    if (err!=null){alert(err);return false;}
 }  
 function validletters(inId){
     var letters = document.getElementById(inId).value;
@@ -130,5 +127,6 @@ function validmessageform(){
         Errormessage(validletters('subject'),'ersub');
         Errormessage(validmessage('message'),'ermsg');
         alert(err);
+        return false;
     }
 }
