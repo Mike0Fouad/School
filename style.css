@@ -88,8 +88,10 @@ section{
 }
 #vision{
     border-radius: 25px 25px 0 0;
-    background:radial-gradient(#23b499dd 10%,#2362b499);    backdrop-filter: blur(7px);
-}
+    background:radial-gradient(#23b499dd 10%,#2362b499);
+    backdrop-filter: blur(7px);
+    border: 2px solid #71a1a1aa;
+    box-shadow: 0px 2px 9px #00265766;}
 #mission{
     transform: translateX(-100%);
     border-radius: 25px 25px 0 0;
@@ -102,6 +104,7 @@ section{
     padding:0 10%;
 }
 .containerhome .wrapperhome{
+    margin-bottom: -2px;
 
     /*margin: 0 20px;*/
     overflow:hidden;
@@ -146,15 +149,48 @@ section{
     font-size: 1.42em;
     font-weight: 300;
     color: white;
-    background:radial-gradient(#23a7a766 10%,#2362b466);    
+    background:radial-gradient(#23a7a766 10%,#2362b466);
     backdrop-filter: blur(13px);
-    border: none;
+    border: 2px solid #71a1a1aa;
     text-shadow: .5px .5px 1px #001226, -.5px -.5px 1px #001226;
     padding: 5px;
     width: 124px;
     height: 70px;
     justify-content: center;
     text-align: center;
+    transition: all .3s ease-in-out;
+}
+.buttonv:hover,
+.buttonm:hover,
+.buttonv:hover + .fakepseudov,
+.buttonm:hover + .fakepseudom{
+    scale: 1.15;
+    transform-origin: top;
+    box-shadow: 0px 2px 7px #00265755;
+    background: radial-gradient(#23b499aa 10%,#2362b4aa);
+    transition: all .3s ease-in-out;
+    font-weight: 500;
+}
+.buttonv:active,
+.buttonm:active,
+.buttonv:active + .fakepseudov,
+.buttonm:active + .fakepseudom{
+    scale: 1.1;
+    transform-origin: top;
+    box-shadow: 0px 0px 7px #00265755;
+    transition: all .3s ease-in-out;
+    background: radial-gradient(#23b499ee 10%,#2362b4ee);
+    text-shadow: 1px 1px 1px #001226, -1px -1px 1px #001226;
+    border: 2px solid #48c3c3aa;
+    border-top: 2px solid #00265722;
+}
+.buttonm:active,
+.buttonm:active + .fakepseudom{
+    border-left: 2px solid #003a5755;
+}
+.buttonv:active,
+.buttonv:active + .fakepseudov{
+    border-right: 2px solid #003a5755;
 }
 .buttonv{
     position: relative;
@@ -170,10 +206,11 @@ section{
 .fakepseudov{
     position: absolute;
     display: flex;
-    border-radius: 0 25px ;
+    border-radius: 0 25px;
     align-items: center;
     margin-top: -70px;
     z-index: -2;
+    box-shadow: 0px 2px 9px #00265766;
 }
 .buttonm{
     position: absolute;
@@ -193,10 +230,7 @@ section{
     margin-top: -70px;
     align-items: center;
     z-index: -2;
-}
-.buttonm:active,
-.buttonv:active{
-    background: radial-gradient(#23b499aa 10%,#2362b466);
+    box-shadow: 0px 2px 9px #00265766;
 }
 @keyframes slideactivebtn {
     0%,50%,100% {  background:radial-gradient(#23b499aa 10%,#2362b477);opacity: 0; }
