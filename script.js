@@ -1,5 +1,5 @@
 //firstname: FN|lastname: LN|gender:gender|birthday: birthday| grade system: GradeSys|grade:grade|phone:phone|email:email
-// need to add a hidden feedback element <p> to display the error message
+
 //validating name input
 function validename(inId){
     var letters = document.getElementById(inId).value;
@@ -11,6 +11,7 @@ function validename(inId){
         return "Invalid Name\n";
     }
 }
+
 //validating gender input
 function validgender(inId){
     var gender = document.getElementById(inId).value;
@@ -20,6 +21,7 @@ function validgender(inId){
         return "PLease select a gender\n";       
     }
 }
+//validating birthday input
 function validbirthday(inId){
     var date = document.getElementById(inId).value;
     if (date!=""){
@@ -28,14 +30,7 @@ function validbirthday(inId){
         return "PLease select a date\n";       
     }
 }
-function validdate(inId){
-    var date = document.getElementById(inId).value;
-    if (date!=""){
-        return null;
-    }else{
-        return "PLease select a date\n";       
-    }
-}
+
 //validating grade system
 function validgradesys(inId){
     var gradesys= document.getElementById(inId).value;
@@ -45,9 +40,6 @@ function validgradesys(inId){
         return "Please select a grade system\n";
     } 
 }
-
-//converting GPA to percentage
-
 
 //validating grade
 function validgrade(inId,igrade){
@@ -80,6 +72,7 @@ function validphone(inId){
         return "Please Enter Phone Number: please make sure to enter country code\n";
     }
 }
+
 //validating email
 function validmail(inId){
     var email = document.getElementById(inId).value;
@@ -90,15 +83,19 @@ function validmail(inId){
         return "Please enter Email Address\n";
     }
 }
+
 //validating form on change
 function Errormessage(txt,id){
     document.getElementById(id).innerHTML=txt;
 }
+
 //validating form on submit
 function validform(){
     var err = validename('FN')+validename('LN')+validgender('gender')+validphone('phone')+validmail('email')+validbirthday('birthday')+validgrade('GradeSys','grade');
     if (err!=null){alert(err);return false;}
 }  
+
+
 function validletters(inId){
     var letters = document.getElementById(inId).value;
     if(letters.length<3){
@@ -109,6 +106,8 @@ function validletters(inId){
         return "Your"+ inId+ "must be only letters\n";
     }
 }
+
+
 function validmessage(inId){
     var message = document.getElementById(inId).value;
     if(message==''){
@@ -119,6 +118,7 @@ function validmessage(inId){
         return "Your Input must be only letters\n";
     }
 }
+
 function validmessageform(){
     var err=validletters('name')+validmail('email')+validletters('subject')+validmessage('message');
     if (err!=null){
