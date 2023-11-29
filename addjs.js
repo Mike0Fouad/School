@@ -1,6 +1,4 @@
-//function visionplay() {
-//  document.getElementsByClassName(".wrapper-holderhome").style.animationPlayState = "running";
-//}
+// buttons home
 const wrapper = document.querySelector(".wrapper-holderhome");
 
 const buttonmission = document.querySelector(".buttonm");
@@ -15,14 +13,23 @@ buttonmission.addEventListener("click", function () {
 
   panimatedv.classList.remove("homeanimationv");
   panimatedm.classList.remove("homeanimationm");
+  panimatedm.classList.add("fadein");
+  panimatedv.classList.add("fadeout");
 
   buttonmission.classList.remove("missionanimation");
   buttonvision.classList.remove("visionanimation");
 
-  panimatedv.style.opacity = "0";
-  panimatedm.style.opacity = "1";
   buttonmission.style.background = "radial-gradient(#23b499dd 10%,#2362b4dd)";
   buttonvision.style.background = "radial-gradient(#23a7a766 10%,#2362b444)";
+
+  setTimeout(function() {
+    panimatedm.style.opacity = "1";
+    panimatedm.classList.remove("fadein");
+}, 1000);
+setTimeout(function() {
+  panimatedv.style.opacity = "0";
+  panimatedv.classList.remove("fadeout");
+}, 500);
 });
 
 buttonvision.addEventListener("click", function () {
@@ -31,35 +38,37 @@ buttonvision.addEventListener("click", function () {
 
   panimatedm.classList.remove("homeanimationm");
   panimatedv.classList.remove("homeanimationv");
+  panimatedv.classList.add("fadein");
+  panimatedm.classList.add("fadeout");
 
-  buttonvision.classList.remove("visionanimation");
   buttonmission.classList.remove("missionanimation");
+  buttonvision.classList.remove("visionanimation");
 
-  panimatedv.style.opacity = "1";
-  panimatedm.style.opacity = "0";
   buttonvision.style.background = "radial-gradient(#23b499dd 10%,#2362b4dd)";
   buttonmission.style.background = "radial-gradient(#23a7a766 10%,#2362b444)";
+
+  setTimeout(function() {
+    panimatedv.style.opacity = "1";
+    panimatedv.classList.remove("fadein");
+}, 999);
+setTimeout(function() {
+  panimatedm.style.opacity = "0";
+  panimatedm.classList.remove("fadeout");
+}, 499);
 });
 
-/*
-function vision() {
-  document.querySelector(".wrapper-holderhome")
-  document.querySelector(".wrapper-holderhome").style.transform = "translateX(0)";
+//3D SLider
+let prev = document.querySelector('.prev');
+let next = document.querySelector('.next');
+let boxthoughts = document.querySelector('.boxthoughts');
 
-  document.querySelector(".buttonm").classList.remove(".missionanimation");
-  document.querySelector("buttonv").classList.remove(".visionanimation"); 
+let degrees = 0;
 
-
-  document.querySelector(".fakepseudom").style.animationPlayState = "paused";
-  document.querySelector(".fakepseudov").style.background = "radial-gradient(#23b499dd 10%,#2362b4dd)";
-  document.querySelector(".fakepseudom").style.background = "radial-gradient(#23a7a766 10%,#2362b444)";
-}
-function mission() {
-  document.querySelector(".wrapper-holderhome").style.animationPlayState = "paused";
-  document.querySelector(".wrapper-holderhome").style.transform = "translateX(-100)";
-
-  buttonmission.classList.remove(".missionanimation");
-  buttonvision.classList.remove(".visionanimation");  
-  document.querySelector(".buttonm").style.background = "radial-gradient(#23b499dd 10%,#2362b4dd)";
-  document.querySelector(".buttonv").style.background = "none";
-}*/
+prev.addEventListener('click', function(){
+    degrees += 45;
+    boxthoughts.style = `transform:perspective(1000px) rotateY(${degrees}deg)`;
+})
+next.addEventListener('click', function(){
+    degrees -= 45;
+    boxthoughts.style = `transform:perspective(1000px) rotateY(${degrees}deg)`;
+})

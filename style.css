@@ -65,7 +65,7 @@ section{
     display: contents;
     /*try never to let a div unnamed, also classNames are used more than ids, but depends on ur workstyle, so i gave it a name*/
 }
-#Logo{
+ #Logo{
     position: relative;
     z-index: -2;
 }
@@ -77,6 +77,25 @@ section{
     drop-shadow(1px 1px .1px #ffffffaa) 
     drop-shadow(1px -1px .1px #ffffffaa);
     scale: .8;
+}
+.boxthoughts #Logo{
+    position: relative;
+    z-index: -2;
+    transform-style:preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+
+}
+.boxthoughts #Logo img{
+    display:flex;
+    width: 600px;
+    height:300px;
+    transform-style:preserve-3d;
+    filter: drop-shadow(0px 0px 27px #23d8b7bb)
+    drop-shadow(1px 1px .1px #ffffffaa) 
+    drop-shadow(1px -1px .1px #ffffffaa);
+    scale: .8;
+    transform: perspective(1000px) rotateY(0deg);
+
 }
 #vision,
 #mission{
@@ -143,6 +162,18 @@ section{
     0%,50%,100% { opacity: 0; }
     2%,48% { opacity:.5 }
     4%,46% { opacity: 1;}
+}
+@keyframes fadein {
+    100% { opacity: 1;}
+}
+.fadein{
+    animation: fadein 1s ease-in;
+}
+@keyframes fadeout {
+    100% { opacity: 0;}
+}
+.fadeout{
+    animation: fadeout .5s ease-out;
 }
 .containerhome button,
 .fakepseudov,
@@ -343,7 +374,6 @@ h1>img {
 }
 /* contentttttttttttttttttttttttttttttttttttttttttt */
 #register {
-    min-height:120vh;
     position: relative;
     grid-area: "content";
     display: inline-grid;
@@ -375,21 +405,24 @@ label[for="birthday"]{
 }
 input[type="date"] {
     background-color:#5c6664;
-    width:150px;
+    width:142px;
     height:30px;
     border-radius:10px;
     border:0;
-    padding-left:10px;
+    padding-left:8px;
     font-size:1.3em;
     color:white;
     outline: white;
+    position: absolute;
+    margin-top: -2px;
 }
 /* trianglesssssssssss */
-/* old
 #triangles {
     position: absolute;
-    top:-10;
-    height:0;
+    top:100;
+    height:100vh;
+    width: 100%;
+    overflow: hidden;
 }
 #triangle1{
     position: absolute;
@@ -399,8 +432,7 @@ input[type="date"] {
 	border-left: 700px solid #555;
 	border-bottom: 400px solid transparent;
     position: relative;
-    z-index: 2;
-    top:-121px;
+    top:-125px;
 }
 
 #triangle2{
@@ -411,9 +443,19 @@ input[type="date"] {
     border-left: 700px solid #333;
     border-bottom: 0px solid transparent;
     position: relative;
-    z-index: 1;
-    top:-200px;
-} */
+    top:-128px;
+}
+#contact #triangles{
+    top:0;
+    left:0;
+    transform:scale(-1);
+    width:100%;
+    height: 100%;
+}
+#contact #triangle2{
+    bottom:0;
+    top:0;
+}
 /* formmmmmmmmmmm */
 legend{
     font-size: 1.3em;
@@ -423,10 +465,14 @@ form{
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     gap:0;
-    max-width: 100%;
     /* position:absolute; */
     /* right:-50%; i reposition ur form a little here back to who it was before, adjust it to ur liking, wont touch ur triangles tho before i break it more :3 mosty i replace the top or right attributes with margin-top, margin-right etc, most of the time u can keep the heights u used or simply reverse them by deleting or adding a - ;) */
-    right:0;
+    left:0;
+    top:0;
+}
+#register form{
+    margin:-12%;
+    width: max-content;
 }
 #title {
 	height:0;
@@ -457,11 +503,14 @@ fieldset{
     border-radius: 9px;
     position: relative;
     margin-top:20px;
-    margin-left: 50px;
+    margin-left: 60px;
     width: 80%;
     padding: 10px;
     margin-bottom: 20px;
-
+}
+#contact fieldset{
+    margin: 3% 10% 5% 10%;
+    width: none;
 }
 ::placeholder {
     color: white;
@@ -506,6 +555,11 @@ input[type='text']:hover::placeholder {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
 }
+#contact form{
+    min-width:100%;
+    border-radius: 25px;
+}
+
 
 #contact2 > input {
     border:0;
@@ -532,6 +586,7 @@ input[type='text']:hover::placeholder {
 .comment > label[for="comm"] {
     text-align: center;
     width:150px; /*was 20%, care if using % can break on too small or too big devices, doesnt scale always good, u can read about rem or em if u want more adjustable sizes, but can also be exhaustng to handle*/
+    height: 45px;
     position: relative;
     font-size: 20px;
     padding:10px;
@@ -546,9 +601,9 @@ textarea {
     z-index: 4;
     position: relative;
     margin-top:-9px; /*was 30*/
-    margin-left: 70px;
+    margin-left: 60px;
     border:0;
-    background-color: #5c6664; /*would recommend to adjust the grey areas to dark blue*/
+    background: #5c6664; /*would recommend to adjust the grey areas to dark blue*/
     width:80%;
     height:100%;
     outline: none;
@@ -556,11 +611,28 @@ textarea {
     /* left: 40px; added this to above left */
     border-radius: 40px;
     padding: 20px;
-    transition: color 0.3s,
-    background-color 0.3s;
+    transition: color 0.3s, background-color 0.3s;
+    scrollbar-width: none;  /* Firefox */
+    margin-right:60px;
+    margin-bottom: 10px;
+    max-width: 100vh;
+}
+#contact textarea{
+    margin: 25px 0 25px 40px;
+    border-radius: 40px;
+    scrollbar-width: none;
+    max-width: none;
+    width: none;
+    height: 50%;
+}
+textarea::-webkit-scrollbar,
+textarea::-webkit-scrollbar-corner {
+    border:none;
+border-radius: 25px;  
+background: #00122688;
 }
 textarea:hover::placeholder{
-    color: #2b2e2e; ; 
+    color: #2b2e2e;
 }
 #button{
     position: relative;
@@ -631,7 +703,7 @@ select {
 
 #body2{
     position: relative;
-    display: contents; /*also try out ruby-text, flex or inline-flex for more design ideas, try to find source (maybe registration) of mispositioning first before starting to style*/
+    display: block; /*also try out ruby-text, flex or inline-flex for more design ideas, try to find source (maybe registration) of mispositioning first before starting to style*/
 }
 
 /* endinggggggggggggggggggggggggggggggggggggggggg */
@@ -666,7 +738,124 @@ hr {
     margin-top:5px;
     padding: 0 0px;
 }
-
+/*3D Slider*/
+#\33 Dspinningthoughts{
+    position:fixed;
+    margin:-290px 0 25% 25%;
+    display: absolute;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    transform-style:preserve-3d;
+    scale: .8;
+}
+.boxthoughts{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transition: 1.5s;
+    transform: perspective(1000px) rotateY(0deg);
+}
+.boxthoughts span{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
+    -webkit-box-reflect:below 0px linear-gradient(transparent,transparent,rgba(233, 96, 96, 0.267));
+}
+.boxthoughts span p{
+    display:grid;
+    height:25%;
+    color:white;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    transform: translateZ(20px);
+    background:radial-gradient(#ffffff99 10%, #ffffff22);
+    border: 1px solid #ffffffcc;
+        border-radius: 25px;
+    margin: -40px 15px 0px 15px;
+    backdrop-filter: blur(4px) invert(3);
+    text-transform:UPPERCASE;
+    text-shadow: .5px .5px 1px #00000055, -.5px -.5px 1px #00000055;
+}
+.boxthoughts span::before{
+    content:"";
+    position: absolute;
+    top:207px;
+    left: 10%;
+    width: 80%;
+    height:4%;
+    border-radius: 100%;
+    background: #0f073151;
+    box-shadow: 0px 1px 15px #0f0731dd;
+}
+.boxthoughts span img{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    user-select: none;
+    filter: saturate(1.3) contrast(1.2) brightness(1.1);
+    border-radius: 25px;
+}
+.btns{
+    position: absolute;
+    display: flex;
+    gap:30px;
+    margin-left: -95px;
+    margin-top:-11px;
+}
+.btns .btn{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #ffffff77;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.prev{
+    margin-right: 130px;
+}
+.next{
+    margin-left: 130px;
+}
+.btns .btn:hover{
+    background:radial-gradient(#ffffff33 10%, #ffffff00);
+    border: 2px solid #ffffffcc;
+}
+.btns .btn:active{
+    background:radial-gradient(#ffffff99 10%, #ffffff33);
+    border: 2px solid #ffffffcc;
+}
+.btns .btn::before{
+    content:"";
+    position: absolute;
+    width:15px;
+    height:15px;
+    border-top:3px solid #ffffff77;
+    border-right:3px solid #ffffff77;
+    transform: rotate(45deg) translate(-2.5px,2.5px);
+}
+.btns .btn.prev::before{
+    transform: rotate(225deg) translate(-2.5px,2.5px);
+}
+.btns .btn:active::before{
+    border-top:3px solid #ffffffcc;
+    border-right:3px solid #ffffffcc;
+}
+/*media query - screen sizes adjustment*/
 @media screen and (min-width:1000px){
     #Logo img{
         display:flex;
