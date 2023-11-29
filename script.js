@@ -128,5 +128,7 @@ function validmessageform(){
         Errormessage(validmessage('message'),'ermsg');
         alert(err);
         return false;
+    }else{
+        return true;
     }
 }
