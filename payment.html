@@ -7,6 +7,42 @@
             background-image:url("./assets/background/payment.jpg") ;
             background-size: cover;
         }
+        #payment{
+            margin-top: 160px;
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        #fees{
+            margin: 20px 20px;
+            padding: 20px;
+            background-color: rgba(146, 71, 71, 0.5);
+            border-radius: 10px;
+        }
+        .fees{
+            margin: 20px 20px;
+            padding: 20px;
+            background-color: rgba(146, 71, 71, 0.5);
+            border-radius: 10px;
+        }
+        #Pcalender{
+            margin: 20px 20px;
+            padding: 20px;
+            background-color: rgba(204, 79, 79, 0.5);
+            border-radius: 10px;
+        }
+        #Scholarship{
+            margin: 20px 20px;
+            padding: 20px;
+            background-color: rgba(97, 45, 45, 0.5);
+            border-radius: 10px;
+        }
+        #specialFund{
+            margin: 0px 20px;
+            padding: 20px;
+            background-color: rgba(122, 18, 18, 0.5);
+            border-radius: 10px;
+        }
+
     </style>
     <title>finance</title>
 </head>
@@ -23,9 +59,10 @@
     </div>
     
     <section id="payment">
+        <h2>Finance</h2>
         <div id="fees">
-            <h2>Fees</h2>
-            <div><h3>Study fees</h3>
+            <h3>Fees</h3>
+            <div class="fees"><h4>Study fees</h4>
                 <table>
                     <tbody><tr>
                         <th>Grade</th>
@@ -45,7 +82,7 @@
                     </tr>
 
                 </tbody></table></div>
-            <div><h3>Study materials</h3>
+            <div class="fees"><h4>Study materials</h4>
                 <table>
                     <tbody><tr>
                         <th>Grade</th>
@@ -70,8 +107,7 @@
 
                 </tbody></table>
             </div>
-            
-            <div><h3>Other fees</h3>
+            <div class="fees"><h4>Other fees</h4>
                 <table>
                 <tbody><tr>
                     <th>category</th>
@@ -102,7 +138,7 @@
             </div>
         </div>
         <div id="Pcalender">
-            <h2>Payment Calender</h2>
+            <h3>Payment Calender</h3>
             <table>
                 <tbody><tr>
                     <th>Month</th>
@@ -127,7 +163,7 @@
             </tbody></table>
         </div>
         <div id="Scholarship">
-            <h2>Scholarships</h2>
+            <h3>Scholarships</h3>
             <table>
                 <tbody><tr>
                     <th>Scholarship</th>
@@ -160,7 +196,7 @@
             </tbody></table>
         </div>
         <div id="specialFund">
-            <h2>Special case funds</h2>
+            <h3>Special case funds</h3>
             <table>
                 <tbody><tr>
                     <th>Special case</th>
@@ -189,7 +225,6 @@
                 </tr>
                 </tbody></table>
         </div>
-
     </section>
     
 

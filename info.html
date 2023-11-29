@@ -1,12 +1,64 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link type="text/css" rel="stylesheet" href="./style.css"> -->
+    <link type="text/css" rel="stylesheet" href="./style.css">
     <style>
         body{
             background-image:url("./assets/background/info.jpg") ;
+            
             background-size: cover;
         }
+        #info{
+            margin-top: 160px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 200px;
+        }
+        #annews{
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 20px 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #anno{
+            background-color: aqua;
+            display:grid;
+            grid-template-columns: 1fr;
+            margin: 20px 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #news{
+            background-color: rgb(99, 172, 172);
+            display:grid;
+            grid-template-columns: 1fr;
+            margin: 20px 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #calender{
+            background-color: rgb(82, 105, 105);
+            margin: auto;
+            width: 50%;
+            padding: 25%;
+            margin: 20px 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #cur{
+            background-color: rgb(177, 169, 124);
+            display:grid;
+            grid-template-rows: 1fr;
+            margin: 20px 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
     </style>
     <title>information</title>
 </head>
@@ -23,143 +75,65 @@
     </div>
     
     <section id="info">
-        <div id="cur">
-            <h2>curriculum</h2>
-            <h3>Grade 1</h3>
-            <table>
-                <tbody><tr>
-                    <th>Subject</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>science</td>
-                    <td>fundamental Informations about biology,physics,Geology </td>
-                </tr>
-                <tr>
-                    <td>Math</td>
-                    <td> Calculus,linear Algebra,descrete mathematics </td>
-                </tr>
-                <tr>
-                    <td>English language</td>
-                    <td>basic litrature, Grammar and vocabulary</td>
-                </tr>
-                <tr>
-                    <td>Philosphy</td>
-                    <td>Studies about great Philosphers and their ideas such Aristotle,Socrates and Pythagoras</td>
-                </tr>
-                <tr>
-                    <td>History</td>
-                    <td>A visit to ancient Egypt and their traditions</td>
-                </tr>
-            </tbody></table>
-            <h3>Grade 2</h3>
-            <table>
-                <tbody><tr>
-                    <th>Subject</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>Physics</td>
-                    <td>A dive through electric physics, torque and aerodynamics</td>
-                </tr>
-                <tr>
-                    <td>Math</td>
-                    <td>A more complex dive in the previous materials with static physics</td>
-                </tr>
-                <tr>
-                    <td>English language</td>
-                    <td>More complex Litrature and English History with more advanced Grammar and vocabulary</td>
-                </tr>
-                <tr>
-                    <td>Geography</td>
-                    <td>Studies of borders and landscapes</td>
-                </tr>
-                <tr>
-                    <td>History</td>
-                    <td>A  look through the modern history of Egypt</td>
-                </tr>
-            </tbody></table>
-            <h3>Grade 3</h3>
-            <table>
-                <tbody><tr>
-                    <th>Subject</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>Biology</td>
-                    <td>Basic anatomy of the animal kingdom and plants and information about the Systems of the humankind</td>
-                </tr>
-                <tr>
-                    <td>Math</td>
-                    <td>Applications of Math and physics</td>
-                </tr>
-                <tr>
-                    <td>English language</td>
-                    <td>learning Complex vocabulary, creating own Litrature</td>
-                </tr>
-                <tr>
-                    <td>Computer science</td>
-                    <td>Learning Html , and basics of Python</td>
-                </tr>
-                <tr>
-                    <td>Geology</td>
-                    <td>learing about the earth and how Earth's surface is created</td>
-                </tr>
-            </tbody></table>
-        </div>
-        <div id="anno">
-            <h3>Announcements</h3>
-            <ul>
-                <li><h4>A Visit of a computer science professor</h4>
+        <h2>Information</h2>
+        <div id="annews">
+            <div id="anno">
+                <h3>Announcements</h3>
+                <ul class="slidingtexts">
+                <li class="ann"><h4>A Visit of a computer science professor</h4>
                     <p>
                         professor mike will be visiting our school to give a lecture about the future of computer science and how it will affect our lives
                     </p></li>
-                <li><h4>Parent-teacher Meeting</h4>
+                <li class="ann"><h4>Parent-teacher Meeting</h4>
                     <p>
                         A meeting will be held on 15/10/2023 to discuss the progress of the students and their grades
                     </p></li>
-                <li><h4>Going green</h4>
+                <li class="ann"><h4>Going green</h4>
                     <p>
                         A new project will be held to make our school more eco-friendly, go to events room for more information
                     </p></li>
-                <li><h4>College Students Visit</h4>
+                <li class="ann"><h4>College Students Visit</h4>
                     <p>
                         A group of college students will be visiting our school to give a lecture about their experience in college
                     </p></li>
-                <li><h4>Culture Day</h4>
+                <li class="ann"><h4>Culture Day</h4>
                     <p>
                         A day will be held to celebrate the different cultures of our students, go to events room for more information
                     </p></li>
-                <li><h4>Help the community</h4>
+                <li class="ann"><h4>Help the community</h4>
                     <p>
                         A new project will be held to help the community,for more information go to events room 
                     </p></li>
-        </ul></div>
-        <div id="news">
-            <h3>News</h3>
-            <ul>
+                </ul>
+            </div>
+            <div id="news">
+                <h3>News</h3>
+                <ul class="sliding texts">
                 
-                <li><h4>Student Achievements</h4>
+                <li class="news"><h4>Student Achievements</h4>
                     <p>
                         Our students have won the first place in the national science fair
                     </p></li>
-                <li><h4>Global Leadership Summit</h4>
+                <li class="news"><h4>Global Leadership Summit</h4>
                     <p>
                         Our school will be hosting the Global Leadership Summit this year on 25/10/2023
                     </p></li>
-                <li><h4>New incoming teachers</h4>
+                <li class="news"><h4>New incoming teachers</h4>
                     <p>
                         We will be welcoming 3 new teachers this year: Mr. Ahmed, Mr. Mohamed and Ms. Nada
                     </p></li>
-                <li><h4>Exchange Students incoming</h4>
+                <li class="news"><h4>Exchange Students incoming</h4>
                     <p>
                         We will be welcoming 2 exchange students this year: Mr. John from the UK and Ms. Maria from Spain
                     </p></li>
                 
                 
-        </ul></div>
+                </ul>
+            </div>
+        </div>
+
         <div id="calender">
-            <h2>Calender</h2>
+            <h3>Calender</h3>
             <table>
                 <tbody><tr>
                     <th>Month</th>
@@ -206,6 +180,97 @@
                     <td>Semester Finals</td>
                     <td>25/5</td>
             </tbody></table>
+        </div>
+        
+        <div id="cur">
+            <h3>curriculum</h3>
+            <div class="gradedesc">
+            <h4>Grade 1</h4>
+            <table>
+                <tbody><tr>
+                    <th>Subject</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>science</td>
+                    <td>fundamental Informations about biology,physics,Geology </td>
+                </tr>
+                <tr>
+                    <td>Math</td>
+                    <td> Calculus,linear Algebra,descrete mathematics </td>
+                </tr>
+                <tr>
+                    <td>English language</td>
+                    <td>basic litrature, Grammar and vocabulary</td>
+                </tr>
+                <tr>
+                    <td>Philosphy</td>
+                    <td>Studies about great Philosphers and their ideas such Aristotle,Socrates and Pythagoras</td>
+                </tr>
+                <tr>
+                    <td>History</td>
+                    <td>A visit to ancient Egypt and their traditions</td>
+                </tr>
+            </tbody></table>
+            </div>
+            <div class="gradedesc">
+            <h4>Grade 2</h4>
+            <table>
+                <tbody><tr>
+                    <th>Subject</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Physics</td>
+                    <td>A dive through electric physics, torque and aerodynamics</td>
+                </tr>
+                <tr>
+                    <td>Math</td>
+                    <td>A more complex dive in the previous materials with static physics</td>
+                </tr>
+                <tr>
+                    <td>English language</td>
+                    <td>More complex Litrature and English History with more advanced Grammar and vocabulary</td>
+                </tr>
+                <tr>
+                    <td>Geography</td>
+                    <td>Studies of borders and landscapes</td>
+                </tr>
+                <tr>
+                    <td>History</td>
+                    <td>A  look through the modern history of Egypt</td>
+                </tr>
+            </tbody></table>
+            </div>
+            <div class="gradedesc">
+            <h4>Grade 3</h4>
+            <table>
+                <tbody><tr>
+                    <th>Subject</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>Biology</td>
+                    <td>Basic anatomy of the animal kingdom and plants and information about the Systems of the humankind</td>
+                </tr>
+                <tr>
+                    <td>Math</td>
+                    <td>Applications of Math and physics</td>
+                </tr>
+                <tr>
+                    <td>English language</td>
+                    <td>learning Complex vocabulary, creating own Litrature</td>
+                </tr>
+                <tr>
+                    <td>Computer science</td>
+                    <td>Learning Html , and basics of Python</td>
+                </tr>
+                <tr>
+                    <td>Geology</td>
+                    <td>learing about the earth and how Earth's surface is created</td>
+                </tr>
+            </tbody></table>
+            </div>
         </div>
     </section>
     
