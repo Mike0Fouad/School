@@ -95,7 +95,7 @@ section{
 #mission{
     transform: translateX(-100%);
     border-radius: 25px 25px 0 0;
-    margin: 1px 2px;
+    margin: 1.5px 0px 0px 1.5px;
 }
 .containerhome{
     position:relative;
@@ -289,6 +289,7 @@ text-align: center;
     margin: .5%;
 }
 .page {
+    position: fixed;
     text-decoration: none;
     color: #fff;
     position:initial ;
@@ -296,14 +297,14 @@ text-align: center;
     /*background-color: #333333aa;*/
     background: radial-gradient(#23b499aa 20%,#2362b466);
     filter: backdrop-filter(13px);
-    border-radius: 25%;
+    border-radius: 25px;
     transition: color 0.3s,
     background-color 0.3s;
 	display:inline-grid;
 	z-index:1001;
     filter: drop-shadow(-1px 0px 5px #c2c2c2cc); 
     transform-origin: top;
-    transition: all ease-in-out .3s;
+    transition: scale ease-in-out .3s;
     transform:scale(.85);
     filter: drop-shadow(0px 3px 3px #23b499aa) drop-shadow(1px 1px 2px #001226);
     ;
@@ -313,8 +314,8 @@ text-align: center;
     scale: 1.05;
     filter: drop-shadow(-1px 0px 5px #aefff055);
     border: .5px solid #cccccc99;
-    transition: all ease-in-out .3s;
-    margin-left:-1px;
+    transition: scale ease-in-out .3s;
+    margin-left:-1.5px;
     margin-top:-4px;
 
 }
