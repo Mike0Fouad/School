@@ -3,20 +3,15 @@
 *{
     margin:0;
     padding:0;
-    font-family: 'Jura', sans-serif; /*ur main font and style*/
+    font-family: 'Jura', sans-serif; 
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
     scroll-behavior: smooth;
-    -webkit-scroll-behavior: smooth; /*weblit helps for crossbrowser compatibility*/
+    -webkit-scroll-behavior: smooth;
 }
 
 
-/* .homewrapper{
-    position: relative;
-    margin-right: 25%;
-    display: contents;
-    /*try never to let a div unnamed, also classNames are used more than ids, but depends on ur workstyle, so i gave it a name*/
-} */
+
 #Logo{
     position: relative;
     z-index: -2;
@@ -65,7 +60,7 @@ text-align: center;
     color: #fff;
     position:initial ;
     padding:11px 11px;
-    /*background-color: #333333aa;*/
+    
     background: radial-gradient(#23b499aa 20%,#2362b466);
     filter: backdrop-filter(13px);
     border-radius: 25%;
@@ -101,7 +96,7 @@ text-align: center;
     top:0;
     z-index: 1003;
     filter: drop-shadow(1px 1px 4px #292929aa);
-    /*needs adjustment*/
+    
   }
 h1>img {
     width: 200px;
