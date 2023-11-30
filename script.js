@@ -6,7 +6,7 @@ function validename(inId){
     if(letters==''){
         return "please Enter a valid name\n";
     }else if(letters.match(/^[a-zA-Z]*$/)){
-        return null;
+        return '';
     }else{
         return "Invalid Name\n";
     }
@@ -16,7 +16,7 @@ function validename(inId){
 function validgender(inId){
     var gender = document.getElementById(inId).value;
     if (gender!=''){
-        return null;
+        return '';
     }else{
         return "PLease select a gender\n";       
     }
@@ -25,7 +25,7 @@ function validgender(inId){
 function validbirthday(inId){
     var date = document.getElementById(inId).value;
     if (date!=""){
-        return null;
+        return '';
     }else{
         return "PLease select a date\n";       
     }
@@ -35,7 +35,7 @@ function validbirthday(inId){
 function validgradesys(inId){
     var gradesys= document.getElementById(inId).value;
     if (gradesys!=0){
-        return null;
+        return '';
     } else {
         return "Please select a grade system\n";
     } 
@@ -47,7 +47,7 @@ function validgrade(inId,igrade){
     var grade= document.getElementById(igrade).value;
     if (gradesys == "percentage"){
         if (grade>=0.0,grade<=100.0){
-            return null;
+            return '';
         } else {
             return "Invalid Percentage\n";
         }
@@ -56,7 +56,7 @@ function validgrade(inId,igrade){
     } else if(gradesys == "GPA"){
         if (grade>=0.0,grade<=4.0){
             convertTopercentage('GradeSys','igrade','submitgrade');
-            return null;}
+            return '';}
         else {
             return "Invalid GPA\n";
         }
@@ -67,7 +67,7 @@ function validgrade(inId,igrade){
 function validphone(inId){
     var phone = document.getElementById(inId).value;
     if(phone.match(/^[0-9]{12}$/g)){
-        return null;
+        return '';
     }else{
         return "Please Enter Phone Number: please make sure to enter country code\n";
     }
@@ -78,7 +78,7 @@ function validmail(inId){
     var email = document.getElementById(inId).value;
     var emaill=/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
     if(email.match(emaill)){
-        return null;
+        return '';
     }else{
         return "Please enter Email Address\n";
     }
@@ -92,7 +92,7 @@ function Errormessage(txt,id){
 //validating form on submit
 function validform(){
     var err = validename('FN')+validename('LN')+validgender('gender')+validphone('phone')+validmail('email')+validbirthday('birthday')+validgrade('GradeSys','grade');
-    if (err!=null){alert(err);return false;}
+    if (err!=''){alert(err);return false;}else {return true;}
 }  
 
 
@@ -101,7 +101,7 @@ function validletters(inId){
     if(letters.length<3){
         return "please Enter a valid "+ inId+"\n";
     }else if(letters.match(/^[a-zA-Z _ -]$/g)){
-        return null;
+        return '';
     }else{
         return "Your"+ inId+ "must be only letters\n";
     }
@@ -113,7 +113,7 @@ function validmessage(inId){
     if(message==''){
         return "Your input shouldnt be less than 50 charchaters \n";
     }else if(letters.length>50){
-        return null;
+        return '';
     }else{
         return "Your Input must be only letters\n";
     }
@@ -121,7 +121,7 @@ function validmessage(inId){
 
 function validmessageform(){
     var err=validletters('name')+validmail('email')+validletters('subject')+validmessage('message');
-    if (err!=null){
+    if (err!=''){
         Errormessage(validletters('name'),'ernam');
         Errormessage(validmail('email'),'erem');
         Errormessage(validletters('subject'),'ersub');
