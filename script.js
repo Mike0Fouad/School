@@ -92,7 +92,7 @@ function Errormessage(txt,id){
 //validating form on submit
 function validform(){
     var err = validename('FN')+validename('LN')+validgender('gender')+validphone('phone')+validmail('email')+validbirthday('birthday')+validgrade('GradeSys','grade');
-    if (err!=''){alert(err);return false;}else {return true;}
+    if (err==''){return true;}else {alert(err);return false;}
 }  
 
 
@@ -121,14 +121,14 @@ function validmessage(inId){
 
 function validmessageform(){
     var err=validletters('name')+validmail('email')+validletters('subject')+validmessage('message');
-    if (err!=''){
+    if (err==''){
+        return true;
+    }else{
         Errormessage(validletters('name'),'ernam');
         Errormessage(validmail('email'),'erem');
         Errormessage(validletters('subject'),'ersub');
         Errormessage(validmessage('message'),'ermsg');
         alert(err);
         return false;
-    }else{
-        return true;
     }
 }
