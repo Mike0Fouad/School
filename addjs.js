@@ -50,11 +50,11 @@ buttonvision.addEventListener("click", function () {
   setTimeout(function() {
     panimatedv.style.opacity = "1";
     panimatedv.classList.remove("fadein");
-}, 999);
+}, 1001);
 setTimeout(function() {
   panimatedm.style.opacity = "0";
   panimatedm.classList.remove("fadeout");
-}, 499);
+}, 501);
 });
 
 //3D SLider

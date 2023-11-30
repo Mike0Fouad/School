@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&family=Wix+Madefor+Display:wght@400;500;600;700;800&display=swap');
-
 *{
     margin:0;
     padding:0;
@@ -24,10 +23,10 @@ body {
 }
 section{
     position: relative;
-    height:100%;
+    height:100vh;
     width:100%;
     min-width:auto;
-    min-height:auto;
+    min-height:100%;
     left:0;
     right:0;
     top:0;
@@ -36,16 +35,30 @@ section{
     padding: 5%;
 }
 #home{
-    /* background: blue;*/
     z-index: -1;
-    /*z-ind
-    ex controls the position of the "layer" (element) -1 is lower than 1, just worksunder special positining and display conditions*/
-    background-image: url("./assets/images/PhotoReal_school_building_3.jpg");
+    /*z-index controls the position of the "layer" (element) -1 is lower than 1, just worksunder special positining and display conditions*/
+    background-image: radial-gradient(#23d8b7cc,#2362b499),
+    url("./assets/background/home.jpg");
     background-position: center;
     background-size: cover;
+    background-blend-mode:color;
+    backdrop-filter: blur(175px);
+}
+#home::before{
+    content:' ';
+    position: absolute;
+    min-width: 100%;
+    height:100%;
+    background: #ffffff00;
+    backdrop-filter: blur(7px);
+    z-index: -2;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
 }
 #home h2{
-    top: 70px;
+  top: 70px;
   position: fixed;
   font-size: 12px;
   left: 0px;
@@ -57,7 +70,6 @@ section{
   letter-spacing: .9px;
   filter: drop-shadow(1px 1px 2px #00260055);
   z-index: 0.5;
-  /*its better to place the headlines under the section and also consider h1 for seo optimization (i also need to look new rules up, meh)*/
 }
 .homewrapper{
     position: relative;
@@ -83,25 +95,34 @@ section{
     z-index: -2;
     transform-style:preserve-3d;
     transform: perspective(1000px) rotateY(0deg);
-
 }
 .boxthoughts #Logo img{
     display:flex;
-    width: 600px;
-    height:300px;
+    min-width: 689px;
+    height: fit-content;
     transform-style:preserve-3d;
-    filter: drop-shadow(0px 0px 27px #23d8b7bb)
-    drop-shadow(1px 1px .1px #ffffffaa) 
-    drop-shadow(1px -1px .1px #ffffffaa);
-    scale: .8;
+    filter: drop-shadow(0px 0px 5px #2393d855)
+    drop-shadow(2px 2px .1px #1c2156) 
+    drop-shadow(2px -2px .1px #ffffffbb)
+    drop-shadow(1px 0px 1px #ffffffbb)
+    drop-shadow(-0px -4px 1px #23b4d899)
+    drop-shadow(4px -0px 1px #23d8b799)
+    drop-shadow(-4px 4px 1px #23b4d899);
+    backdrop-filter: blur(1.5px);
+    border-radius: 25%;
+    scale: .75;
     transform: perspective(1000px) rotateY(0deg);
-
+    transform-origin: top;
+    margin-left: -119%;
+    margin-top: -25%;
+    display: unset;
+    padding: 0 10%;
+    -webkit-box-reflect:below 0px linear-gradient(transparent,transparent,rgba(233, 96, 96, 0.267));
 }
 #vision,
 #mission{
     color: white;
     text-shadow: .5px .5px 1px #001226, -.5px -.5px 1px #001226;
-/*    margin: 10px 0;*/
     padding: 20px;
     z-index: 0;
 }
@@ -117,25 +138,18 @@ section{
     margin: 1.5px 0px 0px 1.5px;
 }
 .containerhome{
-    position:relative;
+    position:fixed;
     max-width: 100vw;
     width: 100%;
     height: auto;
     padding:0 10%;
+    bottom: 0;
+    margin: 2.5% -5%;
 }
 .containerhome .wrapperhome{
     margin-bottom: -2px;
-
-    /*margin: 0 20px;*/
     overflow:hidden;
-/*    overflow-y: hidden;
-    overflow-x:scroll;
-    scroll-behavior: smooth;
-    scrollbar-width: none; }
-.containerhome .wrapperhome::-webkit-scrollbar {
-    display: none; hides scrollbar, but still let u skip through it, not working with current slider */
-  }
-
+}
 .containerhome .wrapper-holderhome{
     display:grid;
     grid-template-columns: repeat(5,100%);
@@ -269,23 +283,123 @@ section{
     2%,48% { background:radial-gradient(#23b499aa 10%,#2362b477); opacity:.5 }
     4%,46% { background:radial-gradient(#23b499aa 10%,#2362b477); opacity: 1;}
 }
+#body4{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50vh 50vh;
+    height: 100%;
+    width:100%;
+    margin-top:140px;
+    margin-bottom: 70vh;
+    gap: 10px;
+}
+.container{
+    position:relative;
+    margin: 5%;
+}
+.container .wrapper{
+
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.6);
+    margin: 5rem auto;
+    overflow: hidden;
+    border-radius: 5%;
+}
+.container .wrapper-holder{
+    display:grid;
+    grid-template-columns: repeat(5,100%);
+    height: 100%;
+    width:100%;
+}
+.wrapper-holder{
+    animation: slide 40s infinite;
+}
+.wrapper-holder>*{
+    height: 100%;
+    width: 100%;
+    background-position: center;
+}
+.slidee{
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+@keyframes slide {
+    0%, 12.5% { transform: translateX(0); }
+    20%, 32.5% { transform: translateX(-100%); }
+    40%, 52.5% { transform: translateX(-200%); }
+    60%, 72.5% { transform: translateX(-300%); }
+    80%,0% { transform: translateX(-400%); }
+}
 #info{
-    background: violet;
-    position: relative;
+  position: relative;
   display: table; /*or try inline-flex for more vertical design*/
+  background-image: radial-gradient(#23d8b7cc,#2362b499),
+  url("./assets/background/info.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode:color;
+  backdrop-filter: blur(175px);
+}
+#info::before{
+    content:' ';
+    position: absolute;
+    min-width: 100%;
+    height:100%;
+    background: #ffffff00;
+    backdrop-filter: blur(7px);
+    z-index: -2;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
 }
 #payment{
-    background: yellow;
     margin: 0%;
     position: relative;
     display: table; /*or try inline-flex for more vertical design*/
-
+    background-image: radial-gradient(#23d8b7cc,#2362b499),
+    url("./assets/background/payment.jpg");
+    background-position: center;
+    background-size: cover;
+    background-blend-mode:color;
+    backdrop-filter: blur(175px);
+}
+  #payment::before{
+      content:' ';
+      position: absolute;
+      min-width: 100%;
+      height:100%;
+      background: #ffffff00;
+      backdrop-filter: blur(7px);
+      z-index: -2;
+      left:0;
+      top:0;
+      bottom:0;
+      right:0;
 }
 #contact{
-    background: green;
     position: relative;
-    /*padding:25% 50% 50% 25%;*/
     display: table; /*or try inline-flex for more vertical design*/
+    background-image: radial-gradient(#23d8b7cc,#2362b499),
+    url("./assets/background/register.jpg");
+    background-position: center;
+    background-size: cover;
+    background-blend-mode:color;
+    backdrop-filter: blur(175px);
+}
+#contact::before{
+    content:' ';
+    position: absolute;
+    min-width: 100%;
+    height:100%;
+    background: #ffffff00;
+    backdrop-filter: blur(7px);
+    z-index: -2;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
 }
 /* headinggggggggggggggggggggggggggggggggggggggggggg */
 a>img {
@@ -325,7 +439,6 @@ text-align: center;
     color: #fff;
     position:initial ;
     padding:11px 11px;
-    /*background-color: #333333aa;*/
     background: radial-gradient(#23b499aa 20%,#2362b466);
     filter: backdrop-filter(13px);
     border-radius: 25px;
@@ -338,7 +451,6 @@ text-align: center;
     transition: scale ease-in-out .3s;
     transform:scale(.85);
     filter: drop-shadow(0px 3px 3px #23b499aa) drop-shadow(1px 1px 2px #001226);
-    ;
 }
 .page:hover{
     background: radial-gradient(#23d8b799 40%,#2362b4aa);
@@ -361,7 +473,6 @@ text-align: center;
     top:0;
     z-index: 1003;
     filter: drop-shadow(1px 1px 4px #292929aa);
-    /*needs adjustment*/
   }
 h1>img {
     width: 200px;
@@ -379,10 +490,25 @@ h1>img {
     display: inline-grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: 1fr;
-    /*background: red;*/
-    background-image: url("./assets/images/PhotoReal_A_school_1.jpg");
+    background-image: radial-gradient(#23d8b7cc,#2362b499),
+    url("./assets/background/contactus.jpg");
     background-position: center;
     background-size: cover;
+    background-blend-mode:color;
+    backdrop-filter: blur(175px);
+}
+#register::before{
+    content:' ';
+    position: absolute;
+    min-width: 100%;
+    height:100%;
+    background: #ffffff00;
+    backdrop-filter: blur(7px);
+    z-index: -2;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
 }
 /*#register>img {
     width: 100%;
@@ -395,148 +521,215 @@ h1>img {
     z-index: -2;
 } */
 form {
-    background-color: #71a1a1aa; /*the aa at the end is the opacity/transparence, delete it for original color 00 (0 opacity) - ff (full opacity)*/
-    backdrop-filter: blur(13px); /*makes the background blurry, delete it if u dont want and u can also try invert(100%) eg for cool x-ray effect*/
+    border-radius: 25px 25px 0 0;
+    background:radial-gradient(#23b499dd 10%,#2362b499);
+    backdrop-filter: blur(7px);
+    box-shadow: 0px 2px 9px #00265766; /*the aa at the end is the opacity/transparence / 00 (0 opacity) - ff (full opacity)*/
+ /*makes the background blurry / invert(100%) eg for cool x-ray effect*/
     z-index: 0;
+}
+.birthday{
+    padding-bottom: 5px;
 }
 label[for="birthday"]{
     font-size:1.2em;
     color:white;
+    padding-left: 30px;
+    text-align: center;
+    width:150px;
+    height: 40px;
+    font-size: 20px;
+    margin-right: 5px;
+    padding:2.5px 10px;
+    background-color: #002657;
+    border-radius: 5px;
 }
-input[type="date"] {
-    background-color:#5c6664;
-    width:142px;
-    height:30px;
-    border-radius:10px;
+#grade{
+    width:55px;
+}
+input[type="date"],
+.submit input{
+    background-color:#002657;
+    width:88px;
+    height:27px;
+    border-radius:5px;
     border:0;
-    padding-left:8px;
-    font-size:1.3em;
+    font-size:11px;
     color:white;
+    text-shadow: .5px .5px .05px #002657, -.25px -.25px .05px #002657;
     outline: white;
     position: absolute;
+    text-align: center;
     margin-top: -2px;
+}
+.submit input{
+display: grid;
+margin-top: -17px;
+position: relative;
+width: 150px;
+height: 35px;
+color: white;
+text-shadow: .5px .5px .05px #002657, -.25px -.25px .05px #002657;
+background-color: #00265799;
+border: 0px;
+border-radius: 50px;
+transition: color 0.3s, background-color 0.3s;
+font-size: medium;
+}
+.submit input:hover{
+    background-color: #002657;
+    cursor: pointer;
 }
 /* trianglesssssssssss */
 #triangles {
     position: absolute;
-    top:100;
-    height:100vh;
+    height: 100%;
     width: 100%;
     overflow: hidden;
 }
 #triangle1{
     position: absolute;
-    width: 100%;
 	height: 0;
 	border-top: 5px solid transparent;
-	border-left: 700px solid #555;
-	border-bottom: 400px solid transparent;
+	border-left: 50vw solid #00265755;
+	border-bottom: 30vh solid transparent;
     position: relative;
-    top:-125px;
 }
-
 #triangle2{
     position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 500px solid transparent;
-    border-left: 700px solid #333;
+    width: 100%;
+    height: 50vh;
+    border-top: 70vh solid transparent;
+    border-left: 50vw solid #00265755;
     border-bottom: 0px solid transparent;
-    position: relative;
-    top:-128px;
+    bottom: 0;
 }
 #contact #triangles{
-    top:0;
-    left:0;
+    position: absolute;
+    overflow: hidden;
+    bottom:0;
+    right:0;
     transform:scale(-1);
     width:100%;
     height: 100%;
+    filter:contrast(1);
+}
+#contact #triangle1{
+    position: absolute;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-left: 50vw solid #23b49955;
+	border-bottom: 60vh solid transparent;
+    position: relative;
 }
 #contact #triangle2{
-    bottom:0;
-    top:0;
+    position: absolute;
+    width: 100%;
+    height: 50vh;
+    border-top: 70vh solid transparent;
+    border-left: 50vw solid #00265755;
+    border-bottom: 0px solid transparent;
+    bottom: 0;
 }
 /* formmmmmmmmmmm */
 legend{
     font-size: 1.3em;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 1.5px 1.5px 1px #002657,
+    -1.5px -1.5px 1px #23b499;
 }
-form{
+#contact form{
+    border-radius: 25px 25px 0 0;
+    background:radial-gradient(#23b499dd 10%,#2362b499);
+    backdrop-filter: blur(7px);
+    border: 2px solid #71a1a1aa;
+    box-shadow: 0px 2px 9px #00265766;
+    z-index: 0;
+    height:100%;
+
+}
+#register form{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
     gap:0;
-    /* position:absolute; */
-    /* right:-50%; i reposition ur form a little here back to who it was before, adjust it to ur liking, wont touch ur triangles tho before i break it more :3 mosty i replace the top or right attributes with margin-top, margin-right etc, most of the time u can keep the heights u used or simply reverse them by deleting or adding a - ;) */
+    position:absolute;
     left:0;
     top:0;
-}
-#register form{
-    margin:-12%;
-    width: max-content;
+    bottom:0;
+    height: 100vh;
+    min-width: 545px;
+    min-height:100vh;
 }
 #title {
+    text-transform: uppercase;
 	height:0;
 	border-top:25px solid transparent;
-	border-right:50px solid #555;
+	border-right:50px solid #23b499cc;
 	border-bottom:25px solid transparent; 
-    border-bottom:100px solid grey;
+    border-bottom:59px solid #23b499;
     position:relative;
     z-index:3;
-    margin-top:-25px;
+    margin-bottom: 20px;
+    margin-top:-50px;
     left:0px;
+    top:25px;
+    text-shadow: 1px 1px 1px #002657aa,
+    -1px -1px 1px #ffffffaa,
+    1px -1px 1px #002657aa,
+    -1px 1px 1px #002657aa;
+    font-size: x-large;
 }
  h2{
     text-align: center;
     position: relative;
-    margin-top:30px;
-    color: aliceblue;
+    margin-top:10px;
+    padding-bottom: 20px;
+    color: #abfff0dd;
 }
-
-
 #formIn {
     position: relative;
-    margin-top:70px;
-    margin-bottom:40px;
     z-index: 4;
 }
 fieldset{
     border-radius: 9px;
     position: relative;
-    margin-top:20px;
-    margin-left: 60px;
-    width: 80%;
-    padding: 10px;
-    margin-bottom: 20px;
+    margin: 2.5% 5%;
+    padding: 2% 5%;
 }
 #contact fieldset{
-    margin: 3% 10% 5% 10%;
+    margin: 5%;
     width: none;
 }
 ::placeholder {
     color: white;
+    text-shadow: .5px .5px .05px #002657, -.25px -.25px .05px #002657;
     opacity: 1; 
   }
 ::-ms-input-placeholder { 
     color: white;
+    text-shadow: .5px .5px .05px #002657, -.25px -.25px .05px #002657;
 }
 #formPI{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1 fr;
-    row-gap: 10px;
-    column-gap: 10px;
-    margin-top: -30px;
+    row-gap: 5%;
+    column-gap: 5%;
+    left:0;
 }
-
 input[type="text"] {
+    width:50%;
+    color: white;
+    text-shadow: .5px .5px .05px #002657, -.25px -.25px .05px #002657;
     border:0;
     border-bottom: 1px solid #fff;
     background-color: transparent;
-    width:75%;
     height: 30px;
     outline: none;
     font-size: larger;
-    margin-left: 40px;
 }
 #Acedmic {
     display: grid;
@@ -545,23 +738,24 @@ input[type="text"] {
 }
 input[type='text']:hover{
     border-bottom: 1px solid #23b499;
-    color: #2b2e2e;
+    color: #002657;
 }
 input[type='text']:hover::placeholder {
-    color: #2b2e2e; ; 
+    color: #002657;
 }
 #contact2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    /*grid-template-columns: 1fr 1fr;*/
     grid-template-rows: 1fr;
 }
 #contact form{
-    min-width:100%;
     border-radius: 25px;
+    padding: 1px;
+    width:100%;
 }
-
-
 #contact2 > input {
+    color: white;
+    text-shadow: .5px .5px .05px #002657, -.25px -.25px .05px #002657;
     border:0;
     border-bottom: 1px solid #fff;
     background-color: transparent;
@@ -569,91 +763,88 @@ input[type='text']:hover::placeholder {
     height: 30px;
     outline: none;
     font-size: larger;
-    margin-left: 40px;    
 }
 #contact2 > input:hover{
     border-bottom: 1px solid #23b499;
-    color: #2b2e2e;
+    color: #002657;
 }
 #contact2 > input:hover::placeholder {
-    color: #2b2e2e; ; 
+    color: #002657;
 }
 .comment {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: 1fr;
+    padding: 0 2%;
 }
 .comment > label[for="comm"] {
     text-align: center;
-    width:150px; /*was 20%, care if using % can break on too small or too big devices, doesnt scale always good, u can read about rem or em if u want more adjustable sizes, but can also be exhaustng to handle*/
+    width:150px;
     height: 45px;
     position: relative;
     font-size: 20px;
     padding:10px;
-    background-color: #5c6664;
+    background-color: #00265799;
     border-radius: 20px;
-    
-    margin-top:0px; /*was 42*/
     margin-left: 40px;
     color:white;
 }
 textarea {
     z-index: 4;
     position: relative;
-    margin-top:-9px; /*was 30*/
-    margin-left: 60px;
+    margin-top:5px;
+    padding: 10px 20px;
+    margin-left: 40px;
     border:0;
-    background: #5c6664; /*would recommend to adjust the grey areas to dark blue*/
-    width:80%;
-    height:100%;
+    background: #00265799; /*would recommend to adjust the grey areas to dark blue*/
     outline: none;
     font-size:medium;
-    /* left: 40px; added this to above left */
-    border-radius: 40px;
-    padding: 20px;
+    border-radius: 25px;
+    padding: 10px 25px;
     transition: color 0.3s, background-color 0.3s;
     scrollbar-width: none;  /* Firefox */
-    margin-right:60px;
-    margin-bottom: 10px;
-    max-width: 100vh;
+    margin-right:40px;
+    margin-bottom: 20px;
+    min-width: 420px;
+    color: white;
 }
 #contact textarea{
-    margin: 25px 0 25px 40px;
-    border-radius: 40px;
+    margin: 10px 0px ;
+    border-radius: 25px;
     scrollbar-width: none;
     max-width: none;
-    width: none;
+    width: 100%;
     height: 50%;
+    min-width: unset;
 }
 textarea::-webkit-scrollbar,
 textarea::-webkit-scrollbar-corner {
     border:none;
-border-radius: 25px;  
+border-radius: 25px;
 background: #00122688;
 }
 textarea:hover::placeholder{
-    color: #2b2e2e;
+    color: #002657;
 }
 #button{
-    position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5%;
 }
 #button >*{
     position: relative;
-    margin-top:10px; /*was 40*/
-    margin-left: 5%; /*was 10%*/
     width: 150px;
     height: 35px;
     color: white;
-    background-color: #5c6664;
+    background-color: #00265799;
     border:0px;
     border-radius: 50px;
     transition: color 0.3s, background-color 0.3s;
+    font-size: medium;
 }
-#button >*:hover{
-    background-color: #23b499;
+#button input:hover{
+    background-color: #002657;
     cursor: pointer;
 }
 select {
@@ -664,7 +855,7 @@ select {
     outline:0;
     box-shadow:none;
     border:0!important;
-    background: #5c6664;
+    background: #00265799;
     background-image: none;
     flex: 1;
     padding: 0 .5em;
@@ -672,6 +863,9 @@ select {
     cursor:pointer;
     font-size: 1em;
     font-family: 'Open Sans', sans-serif;
+ }
+ option{
+    background: #23b4d899;
  }
  select::-ms-expand {
     display: none;
@@ -682,7 +876,7 @@ select {
     width: 15em;
     height: 2em;
     line-height: 2;
-    background: #5c6664;
+    background: #002657;
     overflow: hidden;
     border-radius: .25em;
  }
@@ -692,20 +886,15 @@ select {
     top: 0;
     right: 0;
     padding: 0 1em;
-    background: #2b2e2e;
+    background: #001226;
     cursor:pointer;
     pointer-events:none;
     transition:.25s all ease;
+    color:#23b4d899;
  }
 .select:hover::after {
     color: #23b499;
  }
-
-#body2{
-    position: relative;
-    display: block; /*also try out ruby-text, flex or inline-flex for more design ideas, try to find source (maybe registration) of mispositioning first before starting to style*/
-}
-
 /* endinggggggggggggggggggggggggggggggggggggggggg */
 #ending {
     grid-area: "ending";
@@ -741,14 +930,23 @@ hr {
 /*3D Slider*/
 #\33 Dspinningthoughts{
     position:fixed;
-    margin:-290px 0 25% 25%;
-    display: absolute;
+    display: grid;
     justify-content: center;
     align-items: center;
+    height: 60vh;
+    width: 80vw;
+    transform-style:preserve-3d;
+    scale: .8;
+    top:0;
+    margin: 2.5% 5%;
+}
+.containerbrain{
+    position:relative;
     height: 100%;
     width: 100%;
     transform-style:preserve-3d;
-    scale: .8;
+    scale: 1;
+    top:40%;
 }
 .boxthoughts{
     position: relative;
@@ -767,7 +965,7 @@ hr {
     transform-origin: center;
     transform-style: preserve-3d;
     transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
-    -webkit-box-reflect:below 0px linear-gradient(transparent,transparent,rgba(233, 96, 96, 0.267));
+    -webkit-box-reflect:below 0px linear-gradient(transparent,transparent,rgba(96, 174, 233, 0.267));
 }
 .boxthoughts span p{
     display:grid;
@@ -777,13 +975,15 @@ hr {
     justify-content: center;
     align-content: center;
     transform: translateZ(20px);
-    background:radial-gradient(#ffffff99 10%, #ffffff22);
+    background:radial-gradient(#23a7a799 10%,#2362b499);
     border: 1px solid #ffffffcc;
-        border-radius: 25px;
+    border-radius: 25px;
     margin: -40px 15px 0px 15px;
     backdrop-filter: blur(4px) invert(3);
     text-transform:UPPERCASE;
-    text-shadow: .5px .5px 1px #00000055, -.5px -.5px 1px #00000055;
+    text-shadow: .5px .5px 1px #001226, -.5px -.5px 1px #001226;
+    box-shadow: 0px 1px 15px #0f0731dd;
+
 }
 .boxthoughts span::before{
     content:"";
@@ -812,51 +1012,98 @@ hr {
     display: flex;
     gap:30px;
     margin-left: -95px;
-    margin-top:-11px;
+    margin-top:15%;
+    transform: translateZ(500px);
+}
+.btns span p{
+    display:grid;
+    height:50px;
+    color:white;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    background:radial-gradient(#23a7a799 10%,#2362b499);
+    border: 1px solid #ffffffcc;
+    border-radius: 25px;
+    backdrop-filter: blur(7px);
+    text-transform:UPPERCASE;
+    text-shadow: .5px .5px 1px #001226, -.5px -.4px 1px #001226;
+    margin-top: 25px;
+    padding: 0 15px;
+    scale: 1.5;
+    box-shadow: 0px 2px 7px #00265755;
+
 }
 .btns .btn{
+    scale: 1.15;
+    transform-origin: top;
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 95px;
+    height: 70px;
     border: 2px solid #ffffff77;
-    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    background:radial-gradient(#23a7a799 10%,#2362b499);
+    box-shadow: 0px 2px 7px #00265755;
 }
 .prev{
-    margin-right: 130px;
+    margin-right: 15px;
+    border-radius: 0 25px;
 }
 .next{
-    margin-left: 130px;
+    margin-left: 15px;
+    border-radius: 25px 0;
 }
 .btns .btn:hover{
-    background:radial-gradient(#ffffff33 10%, #ffffff00);
-    border: 2px solid #ffffffcc;
+    scale: 1.25;
+    transform-origin: top;
+    box-shadow: 0px 2px 7px #00265755;
+    background: radial-gradient(#23b499aa 10%,#2362b4aa);
+    transition: all .3s ease-in-out;
+    font-weight: 500;
+    border: 2px solid #48c3c3aa;
+    border-top: 2px solid #00265722;
+    border-left: 2px solid #003a5755;
+    border-right: 2px solid #003a5755;
 }
 .btns .btn:active{
-    background:radial-gradient(#ffffff99 10%, #ffffff33);
-    border: 2px solid #ffffffcc;
+    scale: 1.05;
+    transform-origin: top;
+    box-shadow: 0px 0px 7px #00265755;
+    transition: all .3s ease-in-out;
+    background: radial-gradient(#23b499ee 10%,#2362b4ee);
+    text-shadow: 1px 1px 1px #001226, -1px -1px 1px #001226;
+    border: 2px solid #48c3c3aa;
+    border-top: 2px solid #00265722;
+    border-left: 2px solid #003a5755;
+    border-right: 2px solid #003a5755;
 }
 .btns .btn::before{
     content:"";
     position: absolute;
     width:15px;
     height:15px;
-    border-top:3px solid #ffffff77;
-    border-right:3px solid #ffffff77;
+    border-top:3px solid #d5fffeff;
+    border-right:3px solid #5dd8deaa;
     transform: rotate(45deg) translate(-2.5px,2.5px);
+    filter:drop-shadow(.5px .5px 1px #001226);
 }
 .btns .btn.prev::before{
-    transform: rotate(225deg) translate(-2.5px,2.5px);
+    transform: rotate(315deg) translate(-2.5px,2.5px) scaleX(-1);
+    margin: -7px 0 0 7px;
+}
+.btns .btn:hover::before{
+    border-right:3px solid #125d9faa;
 }
 .btns .btn:active::before{
-    border-top:3px solid #ffffffcc;
-    border-right:3px solid #ffffffcc;
+    border-top:3px solid #d5fffeff;
+    border-right:3px solid #2362b4aa;
+    filter:drop-shadow(.5px .5px .5px #001226);
 }
 /*media query - screen sizes adjustment*/
-@media screen and (min-width:1000px){
+/*@media screen and (min-width:1000px){
     #Logo img{
         display:flex;
         max-width: 80%;
@@ -876,4 +1123,4 @@ hr {
         max-width: 80%;
         margin:40px auto -20px auto;
     }
-}
+} */
